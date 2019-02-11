@@ -4,6 +4,8 @@
 
 #include <glib-object.h>
 
+#include <cogl-path/cogl-path-types.h>
+
 G_BEGIN_DECLS
 
 /*** END file-header ***/
@@ -19,6 +21,7 @@ G_END_DECLS
 /*** END file-tail ***/
 
 /*** BEGIN value-header ***/
+COGL_API
 GType @enum_name@_get_type (void) G_GNUC_CONST;
 #define COGL_TYPE_@ENUMSHORT@ (@enum_name@_get_type())
 

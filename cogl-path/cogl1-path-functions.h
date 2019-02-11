@@ -52,7 +52,7 @@ COGL_BEGIN_DECLS
  * Return value: %TRUE if the handle references a #CoglPath,
  *   %FALSE otherwise
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_path (CoglHandle handle);
 
 /**
@@ -67,7 +67,7 @@ cogl_is_path (CoglHandle handle);
  *
  * Since: 1.4
  */
-void
+COGL_API void
 cogl_path_set_fill_rule (CoglPathFillRule fill_rule);
 
 /**
@@ -79,7 +79,7 @@ cogl_path_set_fill_rule (CoglPathFillRule fill_rule);
  *
  * Since: 1.4
  */
-CoglPathFillRule
+COGL_API CoglPathFillRule
 cogl_path_get_fill_rule (void);
 
 /**
@@ -92,7 +92,7 @@ cogl_path_get_fill_rule (void);
  * The interior of the shape is determined using the fill rule of the
  * path. See %CoglPathFillRule for details.
  **/
-void
+COGL_API void
 cogl_path_fill (void);
 
 /**
@@ -105,7 +105,7 @@ cogl_path_fill (void);
  *
  * Since: 1.0
  **/
-void
+COGL_API void
 cogl_path_fill_preserve (void);
 
 /**
@@ -116,7 +116,7 @@ cogl_path_fill_preserve (void);
  * matrix). To current path is then cleared. To use the path again,
  * call cogl_path_stroke_preserve() instead.
  **/
-void
+COGL_API void
 cogl_path_stroke (void);
 
 /**
@@ -127,7 +127,7 @@ cogl_path_stroke (void);
  *
  * Since: 1.0
  **/
-void
+COGL_API void
 cogl_path_stroke_preserve (void);
 
 /**
@@ -139,7 +139,7 @@ cogl_path_stroke_preserve (void);
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_path_new (void);
 
 /**
@@ -150,7 +150,7 @@ cogl_path_new (void);
  * Moves the pen to the given location. If there is an existing path
  * this will start a new disjoint subpath.
   **/
-void
+COGL_API void
 cogl_path_move_to (float x,
                    float y);
 
@@ -164,7 +164,7 @@ cogl_path_move_to (float x,
  * location. If there is an existing path this will start a new
  * disjoint subpath.
  **/
-void
+COGL_API void
 cogl_path_rel_move_to (float x,
                        float y);
 
@@ -176,7 +176,7 @@ cogl_path_rel_move_to (float x,
  * Adds a straight line segment to the current path that ends at the
  * given coordinates.
  **/
-void
+COGL_API void
 cogl_path_line_to (float x,
                    float y);
 
@@ -188,7 +188,7 @@ cogl_path_line_to (float x,
  * Adds a straight line segment to the current path that ends at the
  * given coordinates relative to the current pen location.
  **/
-void
+COGL_API void
 cogl_path_rel_line_to (float x,
                        float y);
 
@@ -213,7 +213,7 @@ cogl_path_rel_line_to (float x,
  * @angle_2 (so if @angle_2 is less than @angle_1 it will decrease,
  * otherwise it will increase).
  **/
-void
+COGL_API void
 cogl_path_arc (float center_x,
                float center_y,
                float radius_x,
@@ -234,7 +234,7 @@ cogl_path_arc (float center_x,
  * second, third and fourth control points and using current pen location
  * as the first control point.
  **/
-void
+COGL_API void
 cogl_path_curve_to (float x_1,
                     float y_1,
                     float x_2,
@@ -256,7 +256,7 @@ cogl_path_curve_to (float x_1,
  * as the first control point. The given coordinates are relative to the
  * current pen location.
  */
-void
+COGL_API void
 cogl_path_rel_curve_to (float x_1,
                         float y_1,
                         float x_2,
@@ -270,7 +270,7 @@ cogl_path_rel_curve_to (float x_1,
  * Closes the path being constructed by adding a straight line segment
  * to it that ends at the first vertex of the path.
  **/
-void
+COGL_API void
 cogl_path_close (void);
 
 /**
@@ -284,7 +284,7 @@ cogl_path_close (void);
  * coordinates. If there is an existing path this will start a new
  * disjoint sub-path.
  **/
-void
+COGL_API void
 cogl_path_line (float x_1,
                 float y_1,
                 float x_2,
@@ -308,7 +308,7 @@ cogl_path_line (float x_1,
  * fashion for the rest of the vertices. (num_points - 1) segments will
  * be constructed.
  **/
-void
+COGL_API void
 cogl_path_polyline (const float *coords,
                     int          num_points);
 
@@ -327,7 +327,7 @@ cogl_path_polyline (const float *coords,
  * represents the Y coordinate of the first vertex, continuing in the same
  * fashion for the rest of the vertices.
  **/
-void
+COGL_API void
 cogl_path_polygon (const float *coords,
                    int          num_points);
 
@@ -342,7 +342,7 @@ cogl_path_polygon (const float *coords,
  * Constructs a rectangular shape at the given coordinates. If there
  * is an existing path this will start a new disjoint sub-path.
  **/
-void
+COGL_API void
 cogl_path_rectangle (float x_1,
                      float y_1,
                      float x_2,
@@ -358,7 +358,7 @@ cogl_path_rectangle (float x_1,
  * Constructs an ellipse shape. If there is an existing path this will
  * start a new disjoint sub-path.
  **/
-void
+COGL_API void
 cogl_path_ellipse (float center_x,
                    float center_y,
                    float radius_x,
@@ -377,7 +377,7 @@ cogl_path_ellipse (float center_x,
  * Constructs a rectangular shape with rounded corners. If there is an
  * existing path this will start a new disjoint sub-path.
  **/
-void
+COGL_API void
 cogl_path_round_rectangle (float x_1,
                            float y_1,
                            float x_2,
@@ -399,7 +399,7 @@ cogl_path_round_rectangle (float x_1,
  *
  * Since: 1.4
  */
-CoglPath *
+COGL_API CoglPath *
 cogl_get_path (void);
 
 /**
@@ -412,7 +412,7 @@ cogl_get_path (void);
  *
  * Since: 1.4
  */
-void
+COGL_API void
 cogl_set_path (CoglPath *path);
 
 /**
@@ -428,7 +428,7 @@ cogl_set_path (CoglPath *path);
  *
  * Return value: (transfer full): a copy of the path in @path.
  */
-CoglPath *
+COGL_API CoglPath *
 cogl_path_copy (CoglPath *path);
 
 /**
