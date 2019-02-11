@@ -78,6 +78,7 @@ typedef struct _CoglTexturePixmapX11 CoglTexturePixmapX11;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_texture_pixmap_x11_get_gtype (void);
 #endif
 
@@ -111,6 +112,7 @@ typedef enum {
   COGL_TEXTURE_PIXMAP_X11_ERROR_X11,
 } CoglTexturePixmapX11Error;
 
+COGL_API
 uint32_t cogl_texture_pixmap_x11_error_quark (void);
 
 /**
@@ -131,7 +133,7 @@ uint32_t cogl_texture_pixmap_x11_error_quark (void);
  * Since: 1.10
  * Stability: Unstable
  */
-CoglTexturePixmapX11 *
+COGL_API CoglTexturePixmapX11 *
 cogl_texture_pixmap_x11_new (CoglContext *context,
                              uint32_t pixmap,
                              CoglBool automatic_updates,
@@ -170,7 +172,7 @@ cogl_texture_pixmap_x11_new (CoglContext *context,
  * Since: 1.20
  * Stability: Unstable
  */
-CoglTexturePixmapX11 *
+COGL_API CoglTexturePixmapX11 *
 cogl_texture_pixmap_x11_new_left (CoglContext *context,
                                   uint32_t pixmap,
                                   CoglBool automatic_updates,
@@ -190,7 +192,7 @@ cogl_texture_pixmap_x11_new_left (CoglContext *context,
  * Since: 1.20
  * Stability: Unstable
  */
-CoglTexturePixmapX11 *
+COGL_API CoglTexturePixmapX11 *
 cogl_texture_pixmap_x11_new_right (CoglTexturePixmapX11 *left_texture);
 
 /**
@@ -208,7 +210,7 @@ cogl_texture_pixmap_x11_new_right (CoglTexturePixmapX11 *left_texture);
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_texture_pixmap_x11_update_area (CoglTexturePixmapX11 *texture,
                                      int x,
                                      int y,
@@ -231,7 +233,7 @@ cogl_texture_pixmap_x11_update_area (CoglTexturePixmapX11 *texture,
  * Since: 1.4
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_texture_pixmap_x11_is_using_tfp_extension (CoglTexturePixmapX11 *texture);
 
 /**
@@ -253,7 +255,7 @@ cogl_texture_pixmap_x11_is_using_tfp_extension (CoglTexturePixmapX11 *texture);
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_texture_pixmap_x11_set_damage_object (CoglTexturePixmapX11 *texture,
                                            uint32_t damage,
                                            CoglTexturePixmapX11ReportLevel
@@ -271,7 +273,7 @@ cogl_texture_pixmap_x11_set_damage_object (CoglTexturePixmapX11 *texture,
  * Since: 1.4
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_texture_pixmap_x11 (void *object);
 
 #endif /* COGL_ENABLE_EXPERIMENTAL_API */
