@@ -475,7 +475,7 @@ COGL_BEGIN_DECLS
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_fixed_sin (CoglFixed angle);
 
 /**
@@ -488,7 +488,7 @@ cogl_fixed_sin (CoglFixed angle);
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_fixed_tan (CoglFixed angle);
 
 /**
@@ -501,6 +501,7 @@ cogl_fixed_tan (CoglFixed angle);
  *
  * Since: 1.0
  */
+COGL_API
 CoglFixed cogl_fixed_cos (CoglFixed angle);
 
 /**
@@ -513,7 +514,7 @@ CoglFixed cogl_fixed_cos (CoglFixed angle);
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_fixed_atan (CoglFixed a);
 
 /**
@@ -529,7 +530,7 @@ cogl_fixed_atan (CoglFixed a);
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_fixed_atan2 (CoglFixed a,
                   CoglFixed b);
 
@@ -627,7 +628,7 @@ cogl_fixed_mul_div (CoglFixed a,
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_fixed_sqrt (CoglFixed x);
 
 /**
@@ -643,7 +644,7 @@ cogl_fixed_sqrt (CoglFixed x);
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_fixed_log2 (unsigned int x);
 
 /**
@@ -659,7 +660,7 @@ cogl_fixed_log2 (unsigned int x);
  *
  * Since: 1.0
  */
-unsigned int
+COGL_API unsigned int
 cogl_fixed_pow2 (CoglFixed x);
 
 /**
@@ -673,7 +674,7 @@ cogl_fixed_pow2 (CoglFixed x);
  *
  * Since: 1.0
  */
-unsigned int
+COGL_API unsigned int
 cogl_fixed_pow  (unsigned int x,
                  CoglFixed y);
 
@@ -693,7 +694,7 @@ cogl_fixed_pow  (unsigned int x,
  *
  * Since: 1.0
  */
-int
+COGL_API int
 cogl_sqrti (int x);
 
 /**
@@ -747,7 +748,7 @@ cogl_sqrti (int x);
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_angle_sin (CoglAngle angle);
 
 /**
@@ -760,7 +761,7 @@ cogl_angle_sin (CoglAngle angle);
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_angle_tan (CoglAngle angle);
 
 /**
@@ -773,16 +774,63 @@ cogl_angle_tan (CoglAngle angle);
  *
  * Since: 1.0
  */
-CoglFixed
+COGL_API CoglFixed
 cogl_angle_cos (CoglAngle angle);
 
-CoglFixed
+/*< private >*/
+
+#if defined (G_CAN_INLINE)
+G_INLINE_FUNC CoglFixed
+cogl_fixed_mul (CoglFixed a,
+                CoglFixed b)
+{
+# ifdef __arm__
+    int res_low, res_hi;
+
+    __asm__ ("smull %0, %1, %2, %3     \n"
+	     "mov   %0, %0,     lsr %4 \n"
+	     "add   %1, %0, %1, lsl %5 \n"
+	     : "=r"(res_hi), "=r"(res_low)\
+	     : "r"(a), "r"(b), "i"(COGL_FIXED_Q), "i"(32 - COGL_FIXED_Q));
+
+    return (CoglFixed) res_low;
+# else
+    long long r = (long long) a * (long long) b;
+
+    return (unsigned int)(r >> COGL_FIXED_Q);
+# endif
+}
+#endif
+
+#if defined (G_CAN_INLINE)
+G_INLINE_FUNC CoglFixed
+cogl_fixed_div (CoglFixed a,
+                CoglFixed b)
+{
+  return (CoglFixed) ((((int64_t) a) << COGL_FIXED_Q) / b);
+}
+#endif
+
+#if defined(G_CAN_INLINE)
+G_INLINE_FUNC CoglFixed
+cogl_fixed_mul_div (CoglFixed a,
+                    CoglFixed b,
+                    CoglFixed c)
+{
+  CoglFixed ab = cogl_fixed_mul (a, b);
+  CoglFixed quo = cogl_fixed_div (ab, c);
+
+  return quo;
+}
+#endif
+
+COGL_API CoglFixed
 cogl_double_to_fixed (double value);
 
-int
+COGL_API int
 cogl_double_to_int   (double value);
 
-unsigned int
+COGL_API unsigned int
 cogl_double_to_uint (double value);
 
 COGL_END_DECLS

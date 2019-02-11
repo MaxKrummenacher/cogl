@@ -46,7 +46,7 @@ CoglBool
 cogl_clutter_winsys_has_feature (CoglWinsysFeature feature);
 
 #define cogl_onscreen_clutter_backend_set_size cogl_onscreen_clutter_backend_set_size_CLUTTER
-void
+COGL_API void
 cogl_onscreen_clutter_backend_set_size (int width, int height);
 
 COGL_END_DECLS

@@ -38,7 +38,7 @@
 COGL_BEGIN_DECLS
 
 #define cogl_clutter_winsys_xlib_get_visual_info cogl_clutter_winsys_xlib_get_visual_info_CLUTTER
-XVisualInfo *
+COGL_API XVisualInfo *
 cogl_clutter_winsys_xlib_get_visual_info (void);
 
 COGL_END_DECLS
