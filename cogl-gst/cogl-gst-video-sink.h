@@ -39,6 +39,10 @@
 #undef COGL_COMPILATION
 #endif
 
+#ifndef COGL_GST_API
+# define COGL_GST_API
+#endif
+
 #include <cogl/cogl.h>
 
 #include <cogl/cogl.h>
@@ -88,7 +92,7 @@
 G_BEGIN_DECLS
 
 #define COGL_GST_GTYPE_DECLARE_TYPE(name)       \
-  GType cogl_gst_ ## name ## _get_gtype (void)
+  COGL_GST_API GType cogl_gst_ ## name ## _get_gtype (void)
 
 
 #define COGL_GST_TYPE_VIDEO_SINK cogl_gst_video_sink_get_type()
@@ -187,7 +191,7 @@ struct _CoglGstVideoSinkClass
   void *_padding_dummy[8];
 };
 
-GType
+COGL_GST_API GType
 cogl_gst_video_sink_get_type (void) G_GNUC_CONST;
 
 /**
@@ -200,7 +204,7 @@ cogl_gst_video_sink_get_type (void) G_GNUC_CONST;
  * Return value: (transfer full): a new #CoglGstVideoSink
  * Since: 1.16
  */
-CoglGstVideoSink *
+COGL_GST_API CoglGstVideoSink *
 cogl_gst_video_sink_new (CoglContext *ctx);
 
 /**
@@ -220,7 +224,7 @@ cogl_gst_video_sink_new (CoglContext *ctx);
  * Return value: %TRUE if the sink is ready, else %FALSE
  * Since: 1.16
  */
-CoglBool
+COGL_GST_API CoglBool
 cogl_gst_video_sink_is_ready (CoglGstVideoSink *sink);
 
 /**
@@ -244,7 +248,7 @@ cogl_gst_video_sink_is_ready (CoglGstVideoSink *sink);
  *   current frame
  * Since: 1.16
  */
-CoglPipeline *
+COGL_GST_API CoglPipeline *
 cogl_gst_video_sink_get_pipeline (CoglGstVideoSink *vt);
 
 /**
@@ -259,7 +263,7 @@ cogl_gst_video_sink_get_pipeline (CoglGstVideoSink *vt);
  *
  * Since: 1.16
  */
-void
+COGL_GST_API void
 cogl_gst_video_sink_set_context (CoglGstVideoSink *vt,
                                  CoglContext *ctx);
 
@@ -279,7 +283,7 @@ cogl_gst_video_sink_set_context (CoglGstVideoSink *vt,
  *   sink's internal layers.
  * Since: 1.16
  */
-int
+COGL_GST_API int
 cogl_gst_video_sink_get_free_layer (CoglGstVideoSink *sink);
 
 /**
@@ -297,7 +301,7 @@ cogl_gst_video_sink_get_free_layer (CoglGstVideoSink *sink);
  *
  * Since: 1.16
  */
-void
+COGL_GST_API void
 cogl_gst_video_sink_attach_frame (CoglGstVideoSink *sink,
                                   CoglPipeline *pln);
 
@@ -319,7 +323,7 @@ cogl_gst_video_sink_attach_frame (CoglGstVideoSink *sink,
  *
  * Since: 1.16
  */
-void
+COGL_GST_API void
 cogl_gst_video_sink_set_first_layer (CoglGstVideoSink *sink,
                                      int first_layer);
 
@@ -339,7 +343,7 @@ cogl_gst_video_sink_set_first_layer (CoglGstVideoSink *sink,
  *
  * Since: 1.16
  */
-void
+COGL_GST_API void
 cogl_gst_video_sink_set_default_sample (CoglGstVideoSink *sink,
                                         CoglBool default_sample);
 
@@ -359,7 +363,7 @@ cogl_gst_video_sink_set_default_sample (CoglGstVideoSink *sink,
  *
  * Since: 1.16
  */
-void
+COGL_GST_API void
 cogl_gst_video_sink_setup_pipeline (CoglGstVideoSink *sink,
                                     CoglPipeline *pipeline);
 
@@ -379,7 +383,7 @@ cogl_gst_video_sink_setup_pipeline (CoglGstVideoSink *sink,
  * Since: 1.16
  * Stability: unstable
  */
-float
+COGL_GST_API float
 cogl_gst_video_sink_get_aspect (CoglGstVideoSink *sink);
 
 /**
@@ -395,7 +399,7 @@ cogl_gst_video_sink_get_aspect (CoglGstVideoSink *sink);
  * Since: 1.16
  * Stability: unstable
  */
-float
+COGL_GST_API float
 cogl_gst_video_sink_get_width_for_height (CoglGstVideoSink *sink,
                                           float height);
 
@@ -412,7 +416,7 @@ cogl_gst_video_sink_get_width_for_height (CoglGstVideoSink *sink,
  * Since: 1.16
  * Stability: unstable
  */
-float
+COGL_GST_API float
 cogl_gst_video_sink_get_height_for_width (CoglGstVideoSink *sink,
                                           float width);
 
@@ -436,7 +440,7 @@ cogl_gst_video_sink_get_height_for_width (CoglGstVideoSink *sink,
  * Since: 1.18
  * Stability: unstable
  */
-void
+COGL_GST_API void
 cogl_gst_video_sink_get_natural_size (CoglGstVideoSink *sink,
                                       float *width,
                                       float *height);
@@ -461,7 +465,7 @@ cogl_gst_video_sink_get_natural_size (CoglGstVideoSink *sink,
  * Since: 1.18
  * Stability: unstable
  */
-float
+COGL_GST_API float
 cogl_gst_video_sink_get_natural_width (CoglGstVideoSink *sink);
 
 /**
@@ -484,7 +488,7 @@ cogl_gst_video_sink_get_natural_width (CoglGstVideoSink *sink);
  * Since: 1.18
  * Stability: unstable
  */
-float
+COGL_GST_API float
 cogl_gst_video_sink_get_natural_height (CoglGstVideoSink *sink);
 
 /**
@@ -523,7 +527,7 @@ COGL_GST_GTYPE_DECLARE_TYPE (rectangle);
  * Since: 1.16
  * Stability: unstable
  */
-void
+COGL_GST_API void
 cogl_gst_video_sink_fit_size (CoglGstVideoSink *sink,
                               const CoglGstRectangle *available,
                               CoglGstRectangle *output);
