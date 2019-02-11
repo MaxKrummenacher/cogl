@@ -66,14 +66,16 @@ typedef enum {
   TEST_UTILS_TEXTURE_NO_ATLAS       = 1 << 2
 } TestUtilsTextureFlags;
 
+COGL_API
 extern CoglContext *test_ctx;
+COGL_API
 extern CoglFramebuffer *test_fb;
 
-CoglBool
+COGL_API void
 test_utils_init (TestFlags requirement_flags,
                  TestFlags known_failure_flags);
 
-void
+COGL_API void
 test_utils_fini (void);
 
 /*
@@ -95,7 +97,7 @@ test_utils_fini (void);
  *
  * Return value: A newly created #CoglTexture
  */
-CoglTexture *
+COGL_API CoglTexture *
 test_utils_texture_new_with_size (CoglContext *ctx,
                                   int width,
                                   int height,
@@ -125,7 +127,7 @@ test_utils_texture_new_with_size (CoglContext *ctx,
  *
  * Return value: A newly created #CoglTexture or %NULL on failure
  */
-CoglTexture *
+COGL_API CoglTexture *
 test_utils_texture_new_from_data (CoglContext *ctx,
                                   int width,
                                   int height,
@@ -149,7 +151,7 @@ test_utils_texture_new_from_data (CoglContext *ctx,
  *
  * Return value: A newly created #CoglTexture or %NULL on failure
  */
-CoglTexture *
+COGL_API CoglTexture *
 test_utils_texture_new_from_bitmap (CoglBitmap *bitmap,
                                     TestUtilsTextureFlags flags,
                                     CoglBool premultiplied);
@@ -168,7 +170,7 @@ test_utils_texture_new_from_bitmap (CoglBitmap *bitmap,
  * with g_assert_cmpstr so that if the comparison fails then the
  * assert will display a meaningful message
  */
-void
+COGL_API void
 test_utils_check_pixel (CoglFramebuffer *framebuffer,
                         int x, int y, uint32_t expected_pixel);
 
@@ -186,7 +188,7 @@ test_utils_check_pixel (CoglFramebuffer *framebuffer,
  * the comparison fails then the assert will display a meaningful
  * message.
  */
-void
+COGL_API void
 test_utils_check_pixel_and_alpha (CoglFramebuffer *fb,
                                   int x, int y, uint32_t expected_pixel);
 
@@ -203,7 +205,7 @@ test_utils_check_pixel_and_alpha (CoglFramebuffer *fb,
  * with g_assert_cmpstr so that if the comparison fails then the
  * assert will display a meaningful message
  */
-void
+COGL_API void
 test_utils_check_pixel_rgb (CoglFramebuffer *framebuffer,
                             int x, int y, int r, int g, int b);
 
@@ -222,7 +224,7 @@ test_utils_check_pixel_rgb (CoglFramebuffer *framebuffer,
  * string and compared with g_assert_cmpstr so that if the comparison
  * fails then the assert will display a meaningful message
  */
-void
+COGL_API void
 test_utils_check_region (CoglFramebuffer *framebuffer,
                          int x, int y,
                          int width, int height,
@@ -238,7 +240,7 @@ test_utils_check_region (CoglFramebuffer *framebuffer,
  * the comparison fails then the assert will display a meaningful
  * message.
  */
-void
+COGL_API void
 test_utils_compare_pixel (const uint8_t *screen_pixel, uint32_t expected_pixel);
 
 /*
@@ -250,7 +252,7 @@ test_utils_compare_pixel (const uint8_t *screen_pixel, uint32_t expected_pixel);
  * similar to test_utils_compare_pixel() except that it doesn't ignore
  * the alpha component.
  */
-void
+COGL_API void
 test_utils_compare_pixel_and_alpha (const uint8_t *screen_pixel,
                                     uint32_t expected_pixel);
 
@@ -261,7 +263,7 @@ test_utils_compare_pixel_and_alpha (const uint8_t *screen_pixel,
  *
  * Creates a 1x1-pixel RGBA texture filled with the given color.
  */
-CoglTexture *
+COGL_API CoglTexture *
 test_utils_create_color_texture (CoglContext *context,
                                  uint32_t color);
 
@@ -269,7 +271,7 @@ test_utils_create_color_texture (CoglContext *context,
  *
  * Queries if the user asked for verbose output or not.
  */
-CoglBool
+COGL_API CoglBool
 cogl_test_verbose (void);
 
 /* test_util_is_pot:

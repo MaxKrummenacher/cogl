@@ -16,7 +16,7 @@ typedef struct _CoglUnitTest
 #define UNIT_TEST(NAME, REQUIREMENT_FLAGS, KNOWN_FAILURE_FLAGS) \
   static void NAME (void); \
   \
-  const CoglUnitTest unit_test_##NAME = \
+  COGL_API const CoglUnitTest unit_test_##NAME = \
   { #NAME, REQUIREMENT_FLAGS, KNOWN_FAILURE_FLAGS, NAME }; \
   \
   static void NAME (void)
