@@ -48,7 +48,6 @@ source_c = \
 EXTRA_DIST += \
 	tesselator/README 		\
 	tesselator/priorityq-heap.c	\
-	cogl-path.symbols		\
 	$(NULL)
 
 source_1_x_h = \
