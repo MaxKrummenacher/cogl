@@ -62,19 +62,25 @@ COGL_BEGIN_DECLS
 typedef struct _CoglBitmaskImaginaryType *CoglBitmask;
 
 /* These are internal helper macros */
+#if defined (G_OS_WIN32) && (GLIB_SIZEOF_VOID_P == 8)
+# define COGL_PTR_APPEND_SUFFIX(x) x##ULL
+#else
+# define COGL_PTR_APPEND_SUFFIX(x) x##UL
+#endif
+
 #define _cogl_bitmask_to_number(bitmask) \
-  ((unsigned long) (*bitmask))
+  ((size_t) (*bitmask))
 #define _cogl_bitmask_to_bits(bitmask) \
-  (_cogl_bitmask_to_number (bitmask) >> 1UL)
+  (_cogl_bitmask_to_number (bitmask) >> COGL_PTR_APPEND_SUFFIX (1))
 /* The least significant bit is set to mark that no array has been
    allocated yet */
 #define _cogl_bitmask_from_bits(bits) \
-  ((void *) ((((unsigned long) (bits)) << 1UL) | 1UL))
+  ((void *) ((((size_t) (bits)) << COGL_PTR_APPEND_SUFFIX (1)) | COGL_PTR_APPEND_SUFFIX (1)))
 
 /* Internal helper macro to determine whether this bitmask has a
    GArray allocated or whether the pointer is just used directly */
 #define _cogl_bitmask_has_array(bitmask) \
-  (!(_cogl_bitmask_to_number (bitmask) & 1UL))
+  (!(_cogl_bitmask_to_number (bitmask) & COGL_PTR_APPEND_SUFFIX (1)))
 
 /* Number of bits we can use before needing to allocate an array */
 #define COGL_BITMASK_MAX_DIRECT_BITS (sizeof (unsigned long) * 8 - 1)
@@ -173,7 +179,7 @@ _cogl_bitmask_get (const CoglBitmask *bitmask, unsigned int bit_num)
   else if (bit_num >= COGL_BITMASK_MAX_DIRECT_BITS)
     return FALSE;
   else
-    return !!(_cogl_bitmask_to_bits (bitmask) & (1UL << bit_num));
+    return !!(_cogl_bitmask_to_bits (bitmask) & (COGL_PTR_APPEND_SUFFIX (1) << bit_num));
 }
 
 /*
@@ -192,10 +198,10 @@ _cogl_bitmask_set (CoglBitmask *bitmask, unsigned int bit_num, CoglBool value)
     _cogl_bitmask_set_in_array (bitmask, bit_num, value);
   else if (value)
     *bitmask = _cogl_bitmask_from_bits (_cogl_bitmask_to_bits (bitmask) |
-                                        (1UL << bit_num));
+                                        (COGL_PTR_APPEND_SUFFIX (1) << bit_num));
   else
     *bitmask = _cogl_bitmask_from_bits (_cogl_bitmask_to_bits (bitmask) &
-                                        ~(1UL << bit_num));
+                                        ~(COGL_PTR_APPEND_SUFFIX (1) << bit_num));
 }
 
 /*
@@ -304,7 +310,7 @@ _cogl_bitmask_popcount_upto (const CoglBitmask *bitmask,
     return _cogl_util_popcountl (_cogl_bitmask_to_bits (bitmask));
   else
     return _cogl_util_popcountl (_cogl_bitmask_to_bits (bitmask) &
-                                 ((1UL << upto) - 1));
+                                 ((COGL_PTR_APPEND_SUFFIX (1) << upto) - 1));
 }
 
 COGL_END_DECLS
