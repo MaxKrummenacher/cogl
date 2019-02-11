@@ -48,6 +48,10 @@
 #include "cogl-poll-private.h"
 #include "cogl-sdl.h"
 
+#ifndef APIENTRY
+# define APIENTRY
+#endif
+
 typedef struct _CoglContextSdl2
 {
   SDL_Window *current_window;
@@ -158,7 +162,7 @@ _cogl_winsys_display_setup (CoglDisplay *display,
                             CoglError **error)
 {
   CoglDisplaySdl2 *sdl_display;
-  const char * (* get_string_func) (GLenum name);
+  const char * (APIENTRY * get_string_func) (GLenum name);
   const char *gl_version;
 
   _COGL_RETURN_VAL_IF_FAIL (display->winsys == NULL, FALSE);
