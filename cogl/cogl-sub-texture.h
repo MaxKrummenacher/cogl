@@ -36,6 +36,8 @@
 #ifndef __COGL_SUB_TEXTURE_H
 #define __COGL_SUB_TEXTURE_H
 
+#include <cogl/cogl-defines.h>
+
 COGL_BEGIN_DECLS
 
 /**
@@ -58,6 +60,7 @@ typedef struct _CoglSubTexture CoglSubTexture;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_sub_texture_get_gtype (void);
 #endif
 
@@ -92,7 +95,7 @@ GType cogl_sub_texture_get_gtype (void);
  * Since: 1.10
  * Stability: unstable
  */
-CoglSubTexture *
+COGL_API CoglSubTexture *
 cogl_sub_texture_new (CoglContext *ctx,
                       CoglTexture *parent_texture,
                       int sub_x,
@@ -113,7 +116,7 @@ cogl_sub_texture_new (CoglContext *ctx,
  * Since: 1.10
  * Stability: unstable
  */
-CoglTexture *
+COGL_API CoglTexture *
 cogl_sub_texture_get_parent (CoglSubTexture *sub_texture);
 
 /**
@@ -128,7 +131,7 @@ cogl_sub_texture_get_parent (CoglSubTexture *sub_texture);
  * Since: 1.10
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_sub_texture (void *object);
 
 COGL_END_DECLS

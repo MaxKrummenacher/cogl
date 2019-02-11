@@ -143,7 +143,7 @@ COGL_BEGIN_DECLS
  * Since: 2.0
  * Stability: unstable
  */
-CoglContext *
+COGL_API CoglContext *
 cogl_sdl_context_new (int type, CoglError **error);
 
 /**
@@ -167,7 +167,7 @@ cogl_sdl_context_new (int type, CoglError **error);
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_sdl_renderer_set_event_type (CoglRenderer *renderer, int type);
 
 /**
@@ -182,7 +182,7 @@ cogl_sdl_renderer_set_event_type (CoglRenderer *renderer, int type);
  * Since: 2.0
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_sdl_renderer_get_event_type (CoglRenderer *renderer);
 
 /**
@@ -197,7 +197,7 @@ cogl_sdl_renderer_get_event_type (CoglRenderer *renderer);
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_sdl_handle_event (CoglContext *context, SDL_Event *event);
 
 /**
@@ -211,7 +211,7 @@ cogl_sdl_handle_event (CoglContext *context, SDL_Event *event);
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_sdl_idle (CoglContext *context);
 
 #if SDL_MAJOR_VERSION >= 2
@@ -225,7 +225,7 @@ cogl_sdl_idle (CoglContext *context);
  * Since: 2.0
  * Stability: unstable
  */
-SDL_Window *
+COGL_API SDL_Window *
 cogl_sdl_onscreen_get_window (CoglOnscreen *onscreen);
 
 #endif /* SDL_MAJOR_VERSION */

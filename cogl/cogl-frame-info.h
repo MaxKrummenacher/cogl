@@ -56,6 +56,7 @@ typedef struct _CoglFrameInfo CoglFrameInfo;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_frame_info_get_gtype (void);
 #endif
 
@@ -70,7 +71,7 @@ GType cogl_frame_info_get_gtype (void);
  * Since: 2.0
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_frame_info (void *object);
 
 /**
@@ -84,6 +85,7 @@ cogl_is_frame_info (void *object);
  * Since: 1.14
  * Stability: unstable
  */
+COGL_API
 int64_t cogl_frame_info_get_frame_counter (CoglFrameInfo *info);
 
 /**
@@ -108,6 +110,7 @@ int64_t cogl_frame_info_get_frame_counter (CoglFrameInfo *info);
  * Since: 1.14
  * Stability: unstable
  */
+COGL_API
 int64_t cogl_frame_info_get_presentation_time (CoglFrameInfo *info);
 
 /**
@@ -127,6 +130,7 @@ int64_t cogl_frame_info_get_presentation_time (CoglFrameInfo *info);
  * Since: 1.14
  * Stability: unstable
  */
+COGL_API
 float cogl_frame_info_get_refresh_rate (CoglFrameInfo *info);
 
 /**
@@ -140,7 +144,7 @@ float cogl_frame_info_get_refresh_rate (CoglFrameInfo *info);
  * Since: 1.14
  * Stability: unstable
  */
-CoglOutput *
+COGL_API CoglOutput *
 cogl_frame_info_get_output (CoglFrameInfo *info);
 
 G_END_DECLS

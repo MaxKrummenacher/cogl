@@ -62,6 +62,7 @@ typedef struct _CoglOffscreen CoglOffscreen;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_offscreen_get_gtype (void);
 #endif
 
@@ -99,7 +100,7 @@ GType cogl_offscreen_get_gtype (void);
  * Return value: (transfer full): a newly instantiated #CoglOffscreen
  *   framebuffer.
  */
-CoglOffscreen *
+COGL_API CoglOffscreen *
 cogl_offscreen_new_with_texture (CoglTexture *texture);
 
 /**
@@ -136,7 +137,7 @@ cogl_offscreen_new_to_texture (CoglTexture *texture);
  * Returns: %TRUE if @object is a #CoglOffscreen framebuffer,
  *          %FALSE otherwise
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_offscreen (void *object);
 
 /**

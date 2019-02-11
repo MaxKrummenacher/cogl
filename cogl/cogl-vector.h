@@ -36,6 +36,8 @@
 #ifndef __COGL_VECTOR_H
 #define __COGL_VECTOR_H
 
+#include <cogl/cogl-defines.h>
+
 COGL_BEGIN_DECLS
 
 /**
@@ -61,7 +63,7 @@ COGL_BEGIN_DECLS
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_init (float *vector, float x, float y, float z);
 
 /**
@@ -74,7 +76,7 @@ cogl_vector3_init (float *vector, float x, float y, float z);
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_init_zero (float *vector);
 
 /**
@@ -96,7 +98,7 @@ cogl_vector3_init_zero (float *vector);
  * Since: 1.4
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_vector3_equal (const void *v1, const void *v2);
 
 /**
@@ -120,7 +122,7 @@ cogl_vector3_equal (const void *v1, const void *v2);
  * Since: 1.4
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_vector3_equal_with_epsilon (const float *vector0,
                                  const float *vector1,
                                  float epsilon);
@@ -139,7 +141,7 @@ cogl_vector3_equal_with_epsilon (const float *vector0,
  * Since: 1.4
  * Stability: Unstable
  */
-float *
+COGL_API float *
 cogl_vector3_copy (const float *vector);
 
 /**
@@ -152,7 +154,7 @@ cogl_vector3_copy (const float *vector);
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_free (float *vector);
 
 /**
@@ -164,7 +166,7 @@ cogl_vector3_free (float *vector);
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_invert (float *vector);
 
 /**
@@ -179,7 +181,7 @@ cogl_vector3_invert (float *vector);
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_add (float *result,
                   const float *a,
                   const float *b);
@@ -196,7 +198,7 @@ cogl_vector3_add (float *result,
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_subtract (float *result,
                        const float *a,
                        const float *b);
@@ -211,7 +213,7 @@ cogl_vector3_subtract (float *result,
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_multiply_scalar (float *vector,
                               float scalar);
 
@@ -225,7 +227,7 @@ cogl_vector3_multiply_scalar (float *vector,
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_divide_scalar (float *vector,
                             float scalar);
 
@@ -243,7 +245,7 @@ cogl_vector3_divide_scalar (float *vector,
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_normalize (float *vector);
 
 /**
@@ -257,7 +259,7 @@ cogl_vector3_normalize (float *vector);
  * Since: 1.4
  * Stability: Unstable
  */
-float
+COGL_API float
 cogl_vector3_magnitude (const float *vector);
 
 /**
@@ -287,7 +289,7 @@ cogl_vector3_magnitude (const float *vector);
  * Since: 1.4
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_vector3_cross_product (float *result,
                             const float *u,
                             const float *v);
@@ -330,7 +332,7 @@ cogl_vector3_cross_product (float *result,
  * Since: 1.4
  * Stability: Unstable
  */
-float
+COGL_API float
 cogl_vector3_dot_product (const float *a, const float *b);
 
 /**
@@ -347,7 +349,7 @@ cogl_vector3_dot_product (const float *a, const float *b);
  * Since: 1.4
  * Stability: Unstable
  */
-float
+COGL_API float
 cogl_vector3_distance (const float *a, const float *b);
 
 COGL_END_DECLS

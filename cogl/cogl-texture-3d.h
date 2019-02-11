@@ -36,6 +36,8 @@
 #ifndef __COGL_TEXTURE_3D_H
 #define __COGL_TEXTURE_3D_H
 
+#include <cogl/cogl-defines.h>
+
 COGL_BEGIN_DECLS
 
 /**
@@ -58,6 +60,7 @@ typedef struct _CoglTexture3D CoglTexture3D;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_texture_3d_get_gtype (void);
 #endif
 
@@ -92,7 +95,7 @@ GType cogl_texture_3d_get_gtype (void);
  * Since: 1.10
  * Stability: Unstable
  */
-CoglTexture3D *
+COGL_API CoglTexture3D *
 cogl_texture_3d_new_with_size (CoglContext *context,
                                int width,
                                int height,
@@ -134,7 +137,7 @@ cogl_texture_3d_new_with_size (CoglContext *context,
  * Since: 1.10
  * Stability: Unstable
  */
-CoglTexture3D *
+COGL_API CoglTexture3D *
 cogl_texture_3d_new_from_data (CoglContext *context,
                                int width,
                                int height,
@@ -179,7 +182,7 @@ cogl_texture_3d_new_from_data (CoglContext *context,
  * Since: 2.0
  * Stability: unstable
  */
-CoglTexture3D *
+COGL_API CoglTexture3D *
 cogl_texture_3d_new_from_bitmap (CoglBitmap *bitmap,
                                  int height,
                                  int depth);
@@ -196,7 +199,7 @@ cogl_texture_3d_new_from_bitmap (CoglBitmap *bitmap,
  * Since: 1.4
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_texture_3d (void *object);
 
 COGL_END_DECLS

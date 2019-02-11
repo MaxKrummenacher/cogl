@@ -74,6 +74,7 @@ COGL_BEGIN_DECLS
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_pipeline_get_gtype (void);
 #endif
 
@@ -89,7 +90,7 @@ GType cogl_pipeline_get_gtype (void);
  * Since: 2.0
  * Stability: Unstable
  */
-CoglPipeline *
+COGL_API CoglPipeline *
 cogl_pipeline_new (CoglContext *context);
 
 /**
@@ -110,7 +111,7 @@ cogl_pipeline_new (CoglContext *context);
  * Since: 2.0
  * Stability: Unstable
  */
-CoglPipeline *
+COGL_API CoglPipeline *
 cogl_pipeline_copy (CoglPipeline *source);
 
 /**
@@ -125,7 +126,7 @@ cogl_pipeline_copy (CoglPipeline *source);
  * Since: 2.0
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_pipeline (void *object);
 
 /**
@@ -157,7 +158,7 @@ typedef CoglBool (*CoglPipelineLayerCallback) (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_pipeline_foreach_layer (CoglPipeline *pipeline,
                              CoglPipelineLayerCallback callback,
                              void *user_data);
@@ -182,7 +183,7 @@ cogl_pipeline_foreach_layer (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: Unstable
  */
-int
+COGL_API int
 cogl_pipeline_get_uniform_location (CoglPipeline *pipeline,
                                     const char *uniform_name);
 

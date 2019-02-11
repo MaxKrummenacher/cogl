@@ -54,7 +54,7 @@ COGL_BEGIN_DECLS
  * Since: 1.8
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_mir_renderer_set_foreign_connection (CoglRenderer *renderer,
                                           MirConnection *connection);
 
@@ -77,7 +77,7 @@ cogl_mir_renderer_set_foreign_connection (CoglRenderer *renderer,
  * Since: 1.8
  * Stability: unstable
  */
-MirConnection *
+COGL_API MirConnection *
 cogl_mir_renderer_get_connection (CoglRenderer *renderer);
 
 /*
@@ -118,7 +118,7 @@ typedef void (* CoglMirEventCallback) (CoglMirEvent *event,
  * Since: 1.8
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_mir_renderer_add_event_listener (CoglRenderer *renderer,
                                       CoglMirEventCallback func,
                                       void *data);
@@ -135,7 +135,7 @@ cogl_mir_renderer_add_event_listener (CoglRenderer *renderer,
  * Since: 1.8
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_mir_renderer_remove_event_listener (CoglRenderer *renderer,
                                          CoglMirEventCallback func,
                                          void *data);

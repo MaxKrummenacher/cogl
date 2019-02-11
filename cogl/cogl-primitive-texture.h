@@ -84,7 +84,7 @@ typedef struct _CoglPrimitiveTexture CoglPrimitiveTexture;
  * Since: 2.0
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_primitive_texture (void *object);
 
 /**
@@ -102,7 +102,7 @@ cogl_is_primitive_texture (void *object);
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_primitive_texture_set_auto_mipmap (CoglPrimitiveTexture *primitive_texture,
                                         CoglBool value);
 

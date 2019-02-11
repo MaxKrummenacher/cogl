@@ -133,7 +133,7 @@ typedef struct _CoglError {
  *
  * Frees a #CoglError and associated resources.
  */
-void
+COGL_API void
 cogl_error_free (CoglError *error);
 
 /**
@@ -146,7 +146,7 @@ cogl_error_free (CoglError *error);
  * Return value: A newly allocated #CoglError initialized to match the
  *               contents of @error.
  */
-CoglError *
+COGL_API CoglError *
 cogl_error_copy (CoglError *error);
 
 /**
@@ -161,7 +161,7 @@ cogl_error_copy (CoglError *error);
  * Return value: whether the @error corresponds to the given @domain
  *               and @code.
  */
-CoglBool
+COGL_API CoglBool
 cogl_error_matches (CoglError *error,
                     uint32_t domain,
                     int code);

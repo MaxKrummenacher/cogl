@@ -157,10 +157,11 @@ struct _CoglGLES2Vtable
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_gles2_context_get_gtype (void);
 #endif
 
-uint32_t
+COGL_API uint32_t
 _cogl_gles2_context_error_quark (void);
 
 /**
@@ -218,7 +219,7 @@ typedef enum { /*< prefix=COGL_GLES2_CONTEXT_ERROR >*/
  *               was an error and @error will be updated in that case.
  * Stability: unstable
  */
-CoglGLES2Context *
+COGL_API CoglGLES2Context *
 cogl_gles2_context_new (CoglContext *ctx, CoglError **error);
 
 /**
@@ -237,7 +238,7 @@ cogl_gles2_context_new (CoglContext *ctx, CoglError **error);
  *               to functions for the full OpenGLES 2.0 api.
  * Stability: unstable
  */
-const CoglGLES2Vtable *
+COGL_API const CoglGLES2Vtable *
 cogl_gles2_context_get_vtable (CoglGLES2Context *gles2_ctx);
 
 /**
@@ -270,7 +271,7 @@ cogl_gles2_context_get_vtable (CoglGLES2Context *gles2_ctx);
  *               otherwise and @error will be updated.
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_push_gles2_context (CoglContext *ctx,
                          CoglGLES2Context *gles2_ctx,
                          CoglFramebuffer *read_buffer,
@@ -293,7 +294,7 @@ cogl_push_gles2_context (CoglContext *ctx,
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pop_gles2_context (CoglContext *ctx);
 
 /**
@@ -308,7 +309,7 @@ cogl_pop_gles2_context (CoglContext *ctx);
  * Since: 2.0
  * Stability: unstable
  */
-CoglGLES2Vtable *
+COGL_API CoglGLES2Vtable *
 cogl_gles2_get_current_vtable (void);
 
 /**
@@ -338,7 +339,7 @@ cogl_gles2_get_current_vtable (void);
  * Since: 2.0
  * Stability: unstable
  */
-CoglTexture2D *
+COGL_API CoglTexture2D *
 cogl_gles2_texture_2d_new_from_handle (CoglContext *ctx,
                                        CoglGLES2Context *gles2_ctx,
                                        unsigned int handle,
@@ -382,7 +383,7 @@ cogl_gles2_texture_2d_new_from_handle (CoglContext *ctx,
  * Since: 2.0
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_gles2_texture_get_handle (CoglTexture *texture,
                                unsigned int *handle,
                                unsigned int *target);
@@ -398,7 +399,7 @@ cogl_gles2_texture_get_handle (CoglTexture *texture,
  * Since: 2.0
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_gles2_context (void *object);
 
 COGL_END_DECLS

@@ -41,36 +41,37 @@
  * They are only intended for internal use and should not be used by
  * other projects.
  */
+
 #if defined(COGL_DISABLE_DEPRECATION_WARNINGS) || defined(COGL_COMPILATION)
 
-#define COGL_DEPRECATED
-#define COGL_DEPRECATED_FOR(f)
-#define COGL_UNAVAILABLE(maj,min)
+#define COGL_DEPRECATED COGL_API
+#define COGL_DEPRECATED_FOR(f) COGL_API
+#define COGL_UNAVAILABLE(maj,min) COGL_API
 
 #else /* COGL_DISABLE_DEPRECATION_WARNINGS */
 
 #if __GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 1)
-#define COGL_DEPRECATED __attribute__((__deprecated__))
+#define COGL_DEPRECATED __attribute__((__deprecated__)) COGL_API
 #elif defined(_MSC_VER) && (_MSC_VER >= 1300)
-#define COGL_DEPRECATED __declspec(deprecated)
+#define COGL_DEPRECATED __declspec(deprecated) COGL_API
 #else
-#define COGL_DEPRECATED
+#define COGL_DEPRECATED COGL_API
 #endif
 
 #if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5)
-#define COGL_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead")))
+#define COGL_DEPRECATED_FOR(f) __attribute__((__deprecated__("Use '" #f "' instead"))) COGL_API
 #elif defined(_MSC_FULL_VER) && (_MSC_FULL_VER > 140050320)
-#define COGL_DEPRECATED_FOR(f) __declspec(deprecated("is deprecated. Use '" #f "' instead"))
+#define COGL_DEPRECATED_FOR(f) __declspec(deprecated("is deprecated. Use '" #f "' instead")) COGL_API
 #else
-#define COGL_DEPRECATED_FOR(f) G_DEPRECATED
+#define COGL_DEPRECATED_FOR(f) G_DEPRECATED COGL_API
 #endif
 
 #if    __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5)
-#define COGL_UNAVAILABLE(maj,min) __attribute__((deprecated("Not available before " #maj "." #min)))
+#define COGL_UNAVAILABLE(maj,min) __attribute__((deprecated("Not available before " #maj "." #min))) COGL_API
 #elif defined(_MSC_FULL_VER) && (_MSC_FULL_VER > 140050320)
-#define COGL_UNAVAILABLE(maj,min) __declspec(deprecated("is not available before " #maj "." #min))
+#define COGL_UNAVAILABLE(maj,min) __declspec(deprecated("is not available before " #maj "." #min)) COGL_API
 #else
-#define COGL_UNAVAILABLE(maj,min)
+#define COGL_UNAVAILABLE(maj,min) COGL_API
 #endif
 
 #endif /* COGL_DISABLE_DEPRECATION_WARNINGS */
@@ -134,154 +135,154 @@
 # define COGL_DEPRECATED_IN_1_0              COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_0_FOR(f)       COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_0
-# define COGL_DEPRECATED_IN_1_0_FOR(f)
+# define COGL_DEPRECATED_IN_1_0              COGL_API
+# define COGL_DEPRECATED_IN_1_0_FOR(f)       COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_0
 # define COGL_AVAILABLE_IN_1_0               COGL_UNAVAILABLE(1, 0)
 #else
-# define COGL_AVAILABLE_IN_1_0
+# define COGL_AVAILABLE_IN_1_0               COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_2
 # define COGL_DEPRECATED_IN_1_2              COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_2_FOR(f)       COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_2
-# define COGL_DEPRECATED_IN_1_2_FOR(f)
+# define COGL_DEPRECATED_IN_1_2              COGL_API
+# define COGL_DEPRECATED_IN_1_2_FOR(f)       COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_2
 # define COGL_AVAILABLE_IN_1_2               COGL_UNAVAILABLE(1, 2)
 #else
-# define COGL_AVAILABLE_IN_1_2
+# define COGL_AVAILABLE_IN_1_2               COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_4
 # define COGL_DEPRECATED_IN_1_4              COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_4_FOR(f)       COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_4
-# define COGL_DEPRECATED_IN_1_4_FOR(f)
+# define COGL_DEPRECATED_IN_1_4              COGL_API
+# define COGL_DEPRECATED_IN_1_4_FOR(f)       COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_4
 # define COGL_AVAILABLE_IN_1_4               COGL_UNAVAILABLE(1, 4)
 #else
-# define COGL_AVAILABLE_IN_1_4
+# define COGL_AVAILABLE_IN_1_4               COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_6
 # define COGL_DEPRECATED_IN_1_6              COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_6_FOR(f)       COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_6
-# define COGL_DEPRECATED_IN_1_6_FOR(f)
+# define COGL_DEPRECATED_IN_1_6              COGL_API
+# define COGL_DEPRECATED_IN_1_6_FOR(f)       COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_6
 # define COGL_AVAILABLE_IN_1_6               COGL_UNAVAILABLE(1, 6)
 #else
-# define COGL_AVAILABLE_IN_1_6
+# define COGL_AVAILABLE_IN_1_6               COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_8
 # define COGL_DEPRECATED_IN_1_8              COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_8_FOR(f)       COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_8
-# define COGL_DEPRECATED_IN_1_8_FOR(f)
+# define COGL_DEPRECATED_IN_1_8              COGL_API
+# define COGL_DEPRECATED_IN_1_8_FOR(f)       COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_8
 # define COGL_AVAILABLE_IN_1_8               COGL_UNAVAILABLE(1, 8)
 #else
-# define COGL_AVAILABLE_IN_1_8
+# define COGL_AVAILABLE_IN_1_8               COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_10
 # define COGL_DEPRECATED_IN_1_10             COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_10_FOR(f)      COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_10
-# define COGL_DEPRECATED_IN_1_10_FOR(f)
+# define COGL_DEPRECATED_IN_1_10             COGL_API
+# define COGL_DEPRECATED_IN_1_10_FOR(f)      COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_10
 # define COGL_AVAILABLE_IN_1_10              COGL_UNAVAILABLE(1, 10)
 #else
-# define COGL_AVAILABLE_IN_1_10
+# define COGL_AVAILABLE_IN_1_10              COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_12
 # define COGL_DEPRECATED_IN_1_12             COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_12_FOR(f)      COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_12
-# define COGL_DEPRECATED_IN_1_12_FOR(f)
+# define COGL_DEPRECATED_IN_1_12             COGL_API
+# define COGL_DEPRECATED_IN_1_12_FOR(f)      COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_12
 # define COGL_AVAILABLE_IN_1_12              COGL_UNAVAILABLE(1, 12)
 #else
-# define COGL_AVAILABLE_IN_1_12
+# define COGL_AVAILABLE_IN_1_12              COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_14
 # define COGL_DEPRECATED_IN_1_14             COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_14_FOR(f)      COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_14
-# define COGL_DEPRECATED_IN_1_14_FOR(f)
+# define COGL_DEPRECATED_IN_1_14             COGL_API
+# define COGL_DEPRECATED_IN_1_14_FOR(f)      COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_14
 # define COGL_AVAILABLE_IN_1_14              COGL_UNAVAILABLE(1, 14)
 #else
-# define COGL_AVAILABLE_IN_1_14
+# define COGL_AVAILABLE_IN_1_14              COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_16
 # define COGL_DEPRECATED_IN_1_16             COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_16_FOR(f)      COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_16
-# define COGL_DEPRECATED_IN_1_16_FOR(f)
+# define COGL_DEPRECATED_IN_1_16             COGL_API
+# define COGL_DEPRECATED_IN_1_16_FOR(f)      COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_16
 # define COGL_AVAILABLE_IN_1_16              COGL_UNAVAILABLE(1, 16)
 #else
-# define COGL_AVAILABLE_IN_1_16
+# define COGL_AVAILABLE_IN_1_16              COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_18
 # define COGL_DEPRECATED_IN_1_18             COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_18_FOR(f)      COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_18
-# define COGL_DEPRECATED_IN_1_18_FOR(f)
+# define COGL_DEPRECATED_IN_1_18             COGL_API
+# define COGL_DEPRECATED_IN_1_18_FOR(f)      COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_18
 # define COGL_AVAILABLE_IN_1_18              COGL_UNAVAILABLE(1, 18)
 #else
-# define COGL_AVAILABLE_IN_1_18
+# define COGL_AVAILABLE_IN_1_18              COGL_API
 #endif
 
 #if COGL_VERSION_MIN_REQUIRED >= COGL_VERSION_1_20
 # define COGL_DEPRECATED_IN_1_20             COGL_DEPRECATED
 # define COGL_DEPRECATED_IN_1_20_FOR(f)      COGL_DEPRECATED_FOR(f)
 #else
-# define COGL_DEPRECATED_IN_1_20
-# define COGL_DEPRECATED_IN_1_20_FOR(f)
+# define COGL_DEPRECATED_IN_1_20             COGL_API
+# define COGL_DEPRECATED_IN_1_20_FOR(f)      COGL_API
 #endif
 
 #if COGL_VERSION_MAX_ALLOWED < COGL_VERSION_1_20
 # define COGL_AVAILABLE_IN_1_20              COGL_UNAVAILABLE(1, 18)
 #else
-# define COGL_AVAILABLE_IN_1_20
+# define COGL_AVAILABLE_IN_1_20              COGL_API
 #endif
 
 #endif /* __COGL_MACROS_H__ */

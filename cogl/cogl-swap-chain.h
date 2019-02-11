@@ -49,21 +49,22 @@ typedef struct _CoglSwapChain CoglSwapChain;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_swap_chain_get_gtype (void);
 #endif
 
-CoglSwapChain *
+COGL_API CoglSwapChain *
 cogl_swap_chain_new (void);
 
-void
+COGL_API void
 cogl_swap_chain_set_has_alpha (CoglSwapChain *swap_chain,
                                CoglBool has_alpha);
 
-void
+COGL_API void
 cogl_swap_chain_set_length (CoglSwapChain *swap_chain,
                             int length);
 
-CoglBool
+COGL_API CoglBool
 cogl_is_swap_chain (void *object);
 
 COGL_END_DECLS

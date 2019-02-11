@@ -66,7 +66,7 @@ COGL_BEGIN_DECLS
  *
  * Since: 2.0
  */
-CoglTexture2D *
+COGL_API CoglTexture2D *
 cogl_texture_2d_gl_new_from_foreign (CoglContext *ctx,
                                      unsigned int gl_handle,
                                      int width,

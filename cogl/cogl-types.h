@@ -153,7 +153,7 @@ typedef void * CoglHandle;
 #ifdef COGL_HAS_GTYPE_SUPPORT
 
 #define COGL_TYPE_HANDLE        (cogl_handle_get_type ())
-GType
+COGL_API GType
 cogl_handle_get_type (void) G_GNUC_CONST;
 
 #endif /* COGL_HAS_GTYPE_SUPPORT */
@@ -166,7 +166,7 @@ cogl_handle_get_type (void) G_GNUC_CONST;
  *
  * Return value: (transfer none): the handle, with its reference count increased
  */
-CoglHandle
+COGL_API CoglHandle
 cogl_handle_ref (CoglHandle handle);
 
 /**
@@ -176,7 +176,7 @@ cogl_handle_ref (CoglHandle handle);
  * Drecreases the reference count of @handle by 1; if the reference
  * count reaches 0, the resources allocated by @handle will be freed
  */
-void
+COGL_API void
 cogl_handle_unref (CoglHandle handle);
 
 /**
@@ -208,7 +208,7 @@ typedef struct _CoglEuler CoglEuler;
 typedef int32_t CoglFixed;
 
 #define COGL_TYPE_FIXED         (cogl_fixed_get_type ())
-GType
+COGL_API GType
 cogl_fixed_get_type (void) G_GNUC_CONST;
 
 /**
@@ -624,7 +624,7 @@ typedef enum { /*< prefix=COGL_BLEND_STRING_ERROR >*/
   COGL_BLEND_STRING_ERROR_GPU_UNSUPPORTED_ERROR
 } CoglBlendStringError;
 
-uint32_t
+COGL_API uint32_t
 cogl_blend_string_error_quark (void);
 
 #define COGL_SYSTEM_ERROR (_cogl_system_error_quark ())
@@ -664,7 +664,7 @@ typedef enum { /*< prefix=COGL_ERROR >*/
   COGL_SYSTEM_ERROR_NO_MEMORY
 } CoglSystemError;
 
-uint32_t
+COGL_API uint32_t
 _cogl_system_error_quark (void);
 
 /**

@@ -50,7 +50,7 @@ COGL_BEGIN_DECLS
  * Since: 1.18
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_kms_renderer_set_kms_fd (CoglRenderer *renderer,
                               int fd);
 
@@ -65,10 +65,10 @@ cogl_kms_renderer_set_kms_fd (CoglRenderer *renderer,
  *               desriptor has been opened by Cogl.
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_kms_renderer_get_kms_fd (CoglRenderer *renderer);
 
-struct gbm_device *
+COGL_API struct gbm_device *
 cogl_kms_renderer_get_gbm (CoglRenderer *renderer);
 COGL_END_DECLS
 #endif /* __COGL_KMS_RENDERER_H__ */

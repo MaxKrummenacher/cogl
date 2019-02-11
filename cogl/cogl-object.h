@@ -58,6 +58,7 @@ typedef struct _CoglObject      CoglObject;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_object_get_gtype (void);
 #endif
 
@@ -69,7 +70,7 @@ GType cogl_object_get_gtype (void);
  *
  * Returns: the @object, with its reference count increased
  */
-void *
+COGL_API void *
 cogl_object_ref (void *object);
 
 /**
@@ -79,7 +80,7 @@ cogl_object_ref (void *object);
  * Drecreases the reference count of @object by 1; if the reference
  * count reaches 0, the resources allocated by @object will be freed
  */
-void
+COGL_API void
 cogl_object_unref (void *object);
 
 /**
@@ -184,7 +185,7 @@ typedef void
  *
  * Since: 1.4
  */
-void
+COGL_API void
 cogl_object_set_user_data (CoglObject *object,
                            CoglUserDataKey *key,
                            void *user_data,
@@ -206,7 +207,7 @@ cogl_object_set_user_data (CoglObject *object,
  *
  * Since: 1.4
  */
-void *
+COGL_API void *
 cogl_object_get_user_data (CoglObject *object,
                            CoglUserDataKey *key);
 
@@ -225,7 +226,7 @@ cogl_object_get_user_data (CoglObject *object,
  * Since: 1.8
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_debug_object_foreach_type (CoglDebugObjectForeachTypeCallback func,
                                 void *user_data);
 
@@ -240,7 +241,7 @@ cogl_debug_object_foreach_type (CoglDebugObjectForeachTypeCallback func,
  * Since: 1.8
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_debug_object_print_instances (void);
 
 #endif /* COGL_ENABLE_EXPERIMENTAL_API */

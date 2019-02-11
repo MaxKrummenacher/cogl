@@ -91,7 +91,7 @@ typedef struct {
  *
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_kms_display_set_layout (CoglDisplay *display,
                              int width,
                              int height,
@@ -111,7 +111,7 @@ cogl_kms_display_set_layout (CoglDisplay *display,
  *
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_kms_display_set_ignore_crtc (CoglDisplay *display,
                                   uint32_t id,
                                   CoglBool ignore);

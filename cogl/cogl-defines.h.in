@@ -35,6 +35,20 @@
 #ifndef __COGL_DEFINES_H__
 #define __COGL_DEFINES_H__
 
+#if defined (_MSC_VER) && !defined (COGL_STATIC)
+# ifdef COGL_COMPILATION
+#  define _COGL_EXPORTS __declspec (dllexport)
+# else
+#  define _COGL_EXPORTS __declspec (dllimport)
+# endif
+#else
+# define _COGL_EXPORTS
+#endif
+
+#ifndef COGL_API
+# define COGL_API _COGL_EXPORTS
+#endif
+
 @COGL_DEFINES@
 
 #define COGL_VERSION_MAJOR_INTERNAL 1

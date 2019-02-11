@@ -76,7 +76,7 @@ COGL_BEGIN_DECLS
  * Since: 1.8
  * Stability: unstable
  */
-EGLDisplay
+COGL_API EGLDisplay
 cogl_egl_context_get_egl_display (CoglContext *context);
 
 /**
@@ -95,7 +95,7 @@ cogl_egl_context_get_egl_display (CoglContext *context);
  * Since: 1.18
  * Stability: unstable
  */
-EGLContext
+COGL_API EGLContext
 cogl_egl_context_get_egl_context (CoglContext *context);
 
 

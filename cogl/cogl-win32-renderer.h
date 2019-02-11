@@ -53,7 +53,7 @@ COGL_BEGIN_DECLS
  * either not interested in the event, or has used the event to update
  * internal state without taking any exclusive action.
  */
-CoglFilterReturn
+COGL_API CoglFilterReturn
 cogl_win32_renderer_handle_event (CoglRenderer *renderer,
                                   MSG *message);
 
@@ -80,7 +80,7 @@ typedef CoglFilterReturn (* CoglWin32FilterFunc) (MSG *message,
  * function can stop further processing of the event by return
  * %COGL_FILTER_REMOVE.
  */
-void
+COGL_API void
 cogl_win32_renderer_add_filter (CoglRenderer *renderer,
                                 CoglWin32FilterFunc func,
                                 void *data);
@@ -94,7 +94,7 @@ cogl_win32_renderer_add_filter (CoglRenderer *renderer,
  * Removes a callback that was previously added with
  * cogl_win32_renderer_add_filter().
  */
-void
+COGL_API void
 cogl_win32_renderer_remove_filter (CoglRenderer *renderer,
                                    CoglWin32FilterFunc func,
                                    void *data);
@@ -114,7 +114,7 @@ cogl_win32_renderer_remove_filter (CoglRenderer *renderer,
  * Since: 1.16
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_win32_renderer_set_event_retrieval_enabled (CoglRenderer *renderer,
                                                  CoglBool enable);
 

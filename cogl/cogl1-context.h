@@ -106,7 +106,7 @@ cogl_features_available (CoglFeatureFlags features);
  * Return value: a pointer to the requested function or %NULL if the
  *   function is not available.
  */
-CoglFuncPtr
+COGL_API CoglFuncPtr
 cogl_get_proc_address (const char *name);
 
 /**
@@ -763,7 +763,7 @@ cogl_set_source_texture (CoglTexture *texture);
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_flush (void);
 
 /**

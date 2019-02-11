@@ -75,6 +75,7 @@ typedef struct _CoglTextureRectangle CoglTextureRectangle;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_texture_rectangle_get_gtype (void);
 #endif
 
@@ -88,7 +89,7 @@ GType cogl_texture_rectangle_get_gtype (void);
  * Return value: %TRUE if the object references a
  *               #CoglTextureRectangle, %FALSE otherwise.
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_texture_rectangle (void *object);
 
 /**
@@ -128,7 +129,7 @@ cogl_is_texture_rectangle (void *object);
  * Since: 1.10
  * Stability: unstable
  */
-CoglTextureRectangle *
+COGL_API CoglTextureRectangle *
 cogl_texture_rectangle_new_with_size (CoglContext *ctx,
                                       int width,
                                       int height);
@@ -168,7 +169,7 @@ cogl_texture_rectangle_new_with_size (CoglContext *ctx,
  * Since: 2.0
  * Stability: unstable
  */
-CoglTextureRectangle *
+COGL_API CoglTextureRectangle *
 cogl_texture_rectangle_new_from_bitmap (CoglBitmap *bitmap);
 
 /**
@@ -206,7 +207,7 @@ cogl_texture_rectangle_new_from_bitmap (CoglBitmap *bitmap);
  *
  * Return value: (transfer full): A new #CoglTextureRectangle texture
  */
-CoglTextureRectangle *
+COGL_API CoglTextureRectangle *
 cogl_texture_rectangle_new_from_foreign (CoglContext *ctx,
                                          unsigned int gl_handle,
                                          int width,

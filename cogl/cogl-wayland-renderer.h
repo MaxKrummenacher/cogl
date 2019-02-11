@@ -52,7 +52,7 @@ COGL_BEGIN_DECLS
  * Since: 1.8
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_wayland_renderer_set_foreign_display (CoglRenderer *renderer,
                                            struct wl_display *display);
 
@@ -74,7 +74,7 @@ cogl_wayland_renderer_set_foreign_display (CoglRenderer *renderer,
  * Since: 1.16
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_wayland_renderer_set_event_dispatch_enabled (CoglRenderer *renderer,
                                                   CoglBool enable);
 
@@ -97,7 +97,7 @@ cogl_wayland_renderer_set_event_dispatch_enabled (CoglRenderer *renderer,
  * Since: 1.8
  * Stability: unstable
  */
-struct wl_display *
+COGL_API struct wl_display *
 cogl_wayland_renderer_get_display (CoglRenderer *renderer);
 
 COGL_END_DECLS

@@ -162,7 +162,7 @@ typedef struct {
  * Stability: unstable
  * Since: 1.16
  */
-int
+COGL_API int
 cogl_poll_renderer_get_info (CoglRenderer *renderer,
                              CoglPollFD **poll_fds,
                              int *n_poll_fds,
@@ -190,7 +190,7 @@ cogl_poll_renderer_get_info (CoglRenderer *renderer,
  * Stability: unstable
  * Since: 1.16
  */
-void
+COGL_API void
 cogl_poll_renderer_dispatch (CoglRenderer *renderer,
                              const CoglPollFD *poll_fds,
                              int n_poll_fds);

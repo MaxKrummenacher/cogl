@@ -38,6 +38,8 @@
 #ifndef __COGL_SNIPPET_H__
 #define __COGL_SNIPPET_H__
 
+#include <cogl/cogl-defines.h>
+
 COGL_BEGIN_DECLS
 
 /**
@@ -347,6 +349,7 @@ typedef struct _CoglSnippet CoglSnippet;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_snippet_get_gtype (void);
 #endif
 
@@ -692,7 +695,7 @@ typedef enum {
  * Since: 1.10
  * Stability: Unstable
  */
-CoglSnippet *
+COGL_API CoglSnippet *
 cogl_snippet_new (CoglSnippetHook hook,
                   const char *declarations,
                   const char *post);
@@ -706,7 +709,7 @@ cogl_snippet_new (CoglSnippetHook hook,
  * Since: 1.10
  * Stability: Unstable
  */
-CoglSnippetHook
+COGL_API CoglSnippetHook
 cogl_snippet_get_hook (CoglSnippet *snippet);
 
 /**
@@ -721,7 +724,7 @@ cogl_snippet_get_hook (CoglSnippet *snippet);
  * Since: 1.10
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_snippet (void *object);
 
 /**
@@ -742,7 +745,7 @@ cogl_is_snippet (void *object);
  * Since: 1.10
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_snippet_set_declarations (CoglSnippet *snippet,
                                const char *declarations);
 
@@ -756,7 +759,7 @@ cogl_snippet_set_declarations (CoglSnippet *snippet,
  * Since: 1.10
  * Stability: Unstable
  */
-const char *
+COGL_API const char *
 cogl_snippet_get_declarations (CoglSnippet *snippet);
 
 /**
@@ -776,7 +779,7 @@ cogl_snippet_get_declarations (CoglSnippet *snippet);
  * Since: 1.10
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_snippet_set_pre (CoglSnippet *snippet,
                       const char *pre);
 
@@ -790,7 +793,7 @@ cogl_snippet_set_pre (CoglSnippet *snippet,
  * Since: 1.10
  * Stability: Unstable
  */
-const char *
+COGL_API const char *
 cogl_snippet_get_pre (CoglSnippet *snippet);
 
 /**
@@ -810,7 +813,7 @@ cogl_snippet_get_pre (CoglSnippet *snippet);
  * Since: 1.10
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_snippet_set_replace (CoglSnippet *snippet,
                           const char *replace);
 
@@ -824,7 +827,7 @@ cogl_snippet_set_replace (CoglSnippet *snippet,
  * Since: 1.10
  * Stability: Unstable
  */
-const char *
+COGL_API const char *
 cogl_snippet_get_replace (CoglSnippet *snippet);
 
 /**
@@ -844,7 +847,7 @@ cogl_snippet_get_replace (CoglSnippet *snippet);
  * Since: 1.10
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_snippet_set_post (CoglSnippet *snippet,
                        const char *post);
 
@@ -858,7 +861,7 @@ cogl_snippet_set_post (CoglSnippet *snippet,
  * Since: 1.10
  * Stability: Unstable
  */
-const char *
+COGL_API const char *
 cogl_snippet_get_post (CoglSnippet *snippet);
 
 COGL_END_DECLS

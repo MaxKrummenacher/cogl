@@ -76,6 +76,7 @@ typedef struct _CoglOutput CoglOutput;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_output_get_gtype (void);
 #endif
 
@@ -145,7 +146,7 @@ cogl_is_output (void *object);
  * Since: 1.14
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_output_get_x (CoglOutput *output);
 
 /**
@@ -160,7 +161,7 @@ cogl_output_get_x (CoglOutput *output);
  * Since: 1.14
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_output_get_y (CoglOutput *output);
 
 /**
@@ -173,7 +174,7 @@ cogl_output_get_y (CoglOutput *output);
  * Since: 1.14
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_output_get_width (CoglOutput *output);
 
 /**
@@ -186,7 +187,7 @@ cogl_output_get_width (CoglOutput *output);
  * Since: 1.14
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_output_get_height (CoglOutput *output);
 
 /**
@@ -203,7 +204,7 @@ cogl_output_get_height (CoglOutput *output);
  * Since: 1.14
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_output_get_mm_width (CoglOutput *output);
 
 /**
@@ -220,7 +221,7 @@ cogl_output_get_mm_width (CoglOutput *output);
  * Since: 1.14
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_output_get_mm_height (CoglOutput *output);
 
 /**
@@ -235,7 +236,7 @@ cogl_output_get_mm_height (CoglOutput *output);
  * Since: 1.14
  * Stability: unstable
  */
-CoglSubpixelOrder
+COGL_API CoglSubpixelOrder
 cogl_output_get_subpixel_order (CoglOutput *output);
 
 /**
@@ -250,7 +251,7 @@ cogl_output_get_subpixel_order (CoglOutput *output);
  * Since: 1.14
  * Stability: unstable
  */
-float
+COGL_API float
 cogl_output_get_refresh_rate (CoglOutput *output);
 
 COGL_END_DECLS

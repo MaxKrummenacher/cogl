@@ -60,6 +60,7 @@ COGL_BEGIN_DECLS
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_bitmap_get_gtype (void);
 #endif
 
@@ -87,7 +88,7 @@ GType cogl_bitmap_get_gtype (void);
  *
  * Since: 1.0
  */
-CoglBitmap *
+COGL_API CoglBitmap *
 cogl_bitmap_new_from_file (const char *filename,
                            CoglError **error);
 
@@ -106,7 +107,7 @@ cogl_bitmap_new_from_file (const char *filename,
  *
  * Since: 2.0
  */
-CoglBitmap *
+COGL_API CoglBitmap *
 cogl_android_bitmap_new_from_asset (CoglContext *context,
                                     AAssetManager *manager,
                                     const char *filename,
@@ -134,7 +135,7 @@ cogl_android_bitmap_new_from_asset (CoglContext *context,
  * Since: 1.8
  * Stability: unstable
  */
-CoglBitmap *
+COGL_API CoglBitmap *
 cogl_bitmap_new_from_buffer (CoglBuffer *buffer,
                              CoglPixelFormat format,
                              int width,
@@ -171,7 +172,7 @@ cogl_bitmap_new_from_buffer (CoglBuffer *buffer,
  * Since: 1.10
  * Stability: Unstable
  */
-CoglBitmap *
+COGL_API CoglBitmap *
 cogl_bitmap_new_with_size (CoglContext *context,
                            unsigned int width,
                            unsigned int height,
@@ -197,7 +198,7 @@ cogl_bitmap_new_with_size (CoglContext *context,
  * Since: 1.10
  * Stability: unstable
  */
-CoglBitmap *
+COGL_API CoglBitmap *
 cogl_bitmap_new_for_data (CoglContext *context,
                           int width,
                           int height,
@@ -213,7 +214,7 @@ cogl_bitmap_new_for_data (CoglContext *context,
  * Since: 1.10
  * Stability: unstable
  */
-CoglPixelFormat
+COGL_API CoglPixelFormat
 cogl_bitmap_get_format (CoglBitmap *bitmap);
 
 /**
@@ -224,7 +225,7 @@ cogl_bitmap_get_format (CoglBitmap *bitmap);
  * Since: 1.10
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_bitmap_get_width (CoglBitmap *bitmap);
 
 /**
@@ -235,7 +236,7 @@ cogl_bitmap_get_width (CoglBitmap *bitmap);
  * Since: 1.10
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_bitmap_get_height (CoglBitmap *bitmap);
 
 /**
@@ -248,7 +249,7 @@ cogl_bitmap_get_height (CoglBitmap *bitmap);
  * Since: 1.10
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_bitmap_get_rowstride (CoglBitmap *bitmap);
 
 /**
@@ -262,7 +263,7 @@ cogl_bitmap_get_rowstride (CoglBitmap *bitmap);
  * Stability: unstable
  * Since: 1.10
  */
-CoglPixelBuffer *
+COGL_API CoglPixelBuffer *
 cogl_bitmap_get_buffer (CoglBitmap *bitmap);
 
 #endif /* COGL_ENABLE_EXPERIMENTAL_API */
@@ -280,7 +281,7 @@ cogl_bitmap_get_buffer (CoglBitmap *bitmap);
  *
  * Since: 1.0
  */
-CoglBool
+COGL_API CoglBool
 cogl_bitmap_get_size_from_file (const char *filename,
                                 int *width,
                                 int *height);
@@ -296,7 +297,7 @@ cogl_bitmap_get_size_from_file (const char *filename,
  *
  * Since: 1.0
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_bitmap (void *object);
 
 /**
@@ -329,6 +330,7 @@ typedef enum {
   COGL_BITMAP_ERROR_CORRUPT_IMAGE
 } CoglBitmapError;
 
+COGL_API 
 uint32_t cogl_bitmap_error_quark (void);
 
 COGL_END_DECLS

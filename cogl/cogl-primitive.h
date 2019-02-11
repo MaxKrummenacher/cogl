@@ -67,6 +67,7 @@ COGL_BEGIN_DECLS
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_primitive_get_gtype (void);
 #endif
 
@@ -247,7 +248,7 @@ typedef struct {
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new (CoglVerticesMode mode,
                     int n_vertices,
                     ...);
@@ -273,7 +274,7 @@ cogl_primitive_new (CoglVerticesMode mode,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_with_attributes (CoglVerticesMode mode,
                                     int n_vertices,
                                     CoglAttribute **attributes,
@@ -327,7 +328,7 @@ cogl_primitive_new_with_attributes (CoglVerticesMode mode,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_p2 (CoglContext *context,
                        CoglVerticesMode mode,
                        int n_vertices,
@@ -381,7 +382,7 @@ cogl_primitive_new_p2 (CoglContext *context,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_p3 (CoglContext *context,
                        CoglVerticesMode mode,
                        int n_vertices,
@@ -437,7 +438,7 @@ cogl_primitive_new_p3 (CoglContext *context,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_p2c4 (CoglContext *context,
                          CoglVerticesMode mode,
                          int n_vertices,
@@ -493,7 +494,7 @@ cogl_primitive_new_p2c4 (CoglContext *context,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_p3c4 (CoglContext *context,
                          CoglVerticesMode mode,
                          int n_vertices,
@@ -549,7 +550,7 @@ cogl_primitive_new_p3c4 (CoglContext *context,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_p2t2 (CoglContext *context,
                          CoglVerticesMode mode,
                          int n_vertices,
@@ -605,7 +606,7 @@ cogl_primitive_new_p2t2 (CoglContext *context,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_p3t2 (CoglContext *context,
                          CoglVerticesMode mode,
                          int n_vertices,
@@ -661,7 +662,7 @@ cogl_primitive_new_p3t2 (CoglContext *context,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_p2t2c4 (CoglContext *context,
                            CoglVerticesMode mode,
                            int n_vertices,
@@ -717,15 +718,15 @@ cogl_primitive_new_p2t2c4 (CoglContext *context,
  * Since: 1.6
  * Stability: Unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_new_p3t2c4 (CoglContext *context,
                            CoglVerticesMode mode,
                            int n_vertices,
                            const CoglVertexP3T2C4 *data);
-int
+COGL_API int
 cogl_primitive_get_first_vertex (CoglPrimitive *primitive);
 
-void
+COGL_API void
 cogl_primitive_set_first_vertex (CoglPrimitive *primitive,
                                  int first_vertex);
 
@@ -751,7 +752,7 @@ cogl_primitive_set_first_vertex (CoglPrimitive *primitive,
  * Since: 1.8
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_primitive_get_n_vertices (CoglPrimitive *primitive);
 
 /**
@@ -772,14 +773,14 @@ cogl_primitive_get_n_vertices (CoglPrimitive *primitive);
  * Since: 1.8
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_primitive_set_n_vertices (CoglPrimitive *primitive,
                                int n_vertices);
 
-CoglVerticesMode
+COGL_API CoglVerticesMode
 cogl_primitive_get_mode (CoglPrimitive *primitive);
 
-void
+COGL_API void
 cogl_primitive_set_mode (CoglPrimitive *primitive,
                          CoglVerticesMode mode);
 
@@ -794,7 +795,7 @@ cogl_primitive_set_mode (CoglPrimitive *primitive,
  * Since: 1.6
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_primitive_set_attributes (CoglPrimitive *primitive,
                                CoglAttribute **attributes,
                                int n_attributes);
@@ -827,7 +828,7 @@ cogl_primitive_set_attributes (CoglPrimitive *primitive,
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_primitive_set_indices (CoglPrimitive *primitive,
                             CoglIndices *indices,
                             int n_indices);
@@ -842,7 +843,7 @@ cogl_primitive_set_indices (CoglPrimitive *primitive,
  * Since: 1.10
  * Stability: unstable
  */
-CoglIndices *
+COGL_API CoglIndices *
 cogl_primitive_get_indices (CoglPrimitive *primitive);
 
 /**
@@ -857,7 +858,7 @@ cogl_primitive_get_indices (CoglPrimitive *primitive);
  * Since: 1.10
  * Stability: unstable
  */
-CoglPrimitive *
+COGL_API CoglPrimitive *
 cogl_primitive_copy (CoglPrimitive *primitive);
 
 /**
@@ -872,7 +873,7 @@ cogl_primitive_copy (CoglPrimitive *primitive);
  * Since: 1.6
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_primitive (void *object);
 
 /**
@@ -907,7 +908,7 @@ typedef CoglBool (* CoglPrimitiveAttributeCallback) (CoglPrimitive *primitive,
  * Since: 1.10
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_primitive_foreach_attribute (CoglPrimitive *primitive,
                                   CoglPrimitiveAttributeCallback callback,
                                   void *user_data);
@@ -930,7 +931,7 @@ cogl_primitive_foreach_attribute (CoglPrimitive *primitive,
  * Stability: unstable
  * Since: 1.16
  */
-void
+COGL_API void
 cogl_primitive_draw (CoglPrimitive *primitive,
                      CoglFramebuffer *framebuffer,
                      CoglPipeline *pipeline);

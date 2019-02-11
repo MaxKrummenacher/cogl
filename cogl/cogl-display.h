@@ -82,6 +82,7 @@ typedef struct _CoglDisplay	      CoglDisplay;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_display_get_gtype (void);
 #endif
 
@@ -125,7 +126,7 @@ GType cogl_display_get_gtype (void);
  * Since: 1.10
  * Stability: unstable
  */
-CoglDisplay *
+COGL_API CoglDisplay *
 cogl_display_new (CoglRenderer *renderer,
                   CoglOnscreenTemplate *onscreen_template);
 
@@ -140,7 +141,7 @@ cogl_display_new (CoglRenderer *renderer,
  * Since: 1.10
  * Stability: unstable
  */
-CoglRenderer *
+COGL_API CoglRenderer *
 cogl_display_get_renderer (CoglDisplay *display);
 
 /**
@@ -159,7 +160,7 @@ cogl_display_get_renderer (CoglDisplay *display);
  * Since: 1.16
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_display_set_onscreen_template (CoglDisplay *display,
                                     CoglOnscreenTemplate *onscreen_template);
 
@@ -194,7 +195,7 @@ cogl_display_set_onscreen_template (CoglDisplay *display,
  * Since: 1.10
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_display_setup (CoglDisplay *display,
                     CoglError **error);
 
@@ -209,7 +210,7 @@ cogl_display_setup (CoglDisplay *display,
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_gdl_display_set_plane (CoglDisplay *display,
                             gdl_plane_id_t plane);
 #endif
@@ -225,7 +226,7 @@ cogl_gdl_display_set_plane (CoglDisplay *display,
  * Since: 1.10
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_display (void *object);
 
 COGL_END_DECLS

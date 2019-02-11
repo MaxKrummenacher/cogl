@@ -107,6 +107,7 @@ COGL_BEGIN_DECLS
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_context_get_gtype (void);
 #endif
 
@@ -122,7 +123,7 @@ GType cogl_context_get_gtype (void);
  * Since: 1.8
  * Stability: unstable
  */
-CoglContext *
+COGL_API CoglContext *
 cogl_context_new (CoglDisplay *display,
                   CoglError **error);
 
@@ -141,7 +142,7 @@ cogl_context_new (CoglDisplay *display,
  * Since: 1.8
  * Stability: unstable
  */
-CoglDisplay *
+COGL_API CoglDisplay *
 cogl_context_get_display (CoglContext *context);
 
 /**
@@ -160,7 +161,7 @@ cogl_context_get_display (CoglContext *context);
  * Since: 1.16
  * Stability: unstable
  */
-CoglRenderer *
+COGL_API CoglRenderer *
 cogl_context_get_renderer (CoglContext *context);
 
 #ifdef COGL_HAS_EGL_PLATFORM_ANDROID_SUPPORT
@@ -176,7 +177,7 @@ cogl_context_get_renderer (CoglContext *context);
  * Since: 1.8
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_android_set_native_window (ANativeWindow *window);
 #endif
 
@@ -192,7 +193,7 @@ cogl_android_set_native_window (ANativeWindow *window);
  * Since: 1.10
  * Stability: Unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_context (void *object);
 
 #endif /* COGL_ENABLE_EXPERIMENTAL_2_0_API */
@@ -316,7 +317,7 @@ typedef enum _CoglFeatureID
  * Since: 1.10
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_has_feature (CoglContext *context, CoglFeatureID feature);
 
 /**
@@ -336,7 +337,7 @@ cogl_has_feature (CoglContext *context, CoglFeatureID feature);
  * Since: 1.10
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_has_features (CoglContext *context, ...);
 
 /**
@@ -365,7 +366,7 @@ typedef void (*CoglFeatureCallback) (CoglFeatureID feature, void *user_data);
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_foreach_feature (CoglContext *context,
                       CoglFeatureCallback callback,
                       void *user_data);
@@ -390,7 +391,7 @@ cogl_foreach_feature (CoglContext *context,
  * Since: 1.14
  * Stability: unstable
  */
-int64_t
+COGL_API int64_t
 cogl_get_clock_time (CoglContext *context);
 
 #endif /* COGL_ENABLE_EXPERIMENTAL_API */

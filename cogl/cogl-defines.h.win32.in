@@ -39,6 +39,20 @@
 
 G_BEGIN_DECLS
 
+#if defined (_MSC_VER) && !defined (COGL_STATIC)
+# ifdef COGL_COMPILATION
+#  define _COGL_EXPORTS __declspec (dllexport)
+# else
+#  define _COGL_EXPORTS __declspec (dllimport)
+# endif
+#else
+# define _COGL_EXPORTS
+#endif
+
+#ifndef COGL_API
+# define COGL_API _COGL_EXPORTS
+#endif
+
 #define COGL_HAS_GLIB_SUPPORT 1
 #define COGL_HAS_GTYPE_SUPPORT 1
 #define COGL_HAS_WGL_SUPPORT 1

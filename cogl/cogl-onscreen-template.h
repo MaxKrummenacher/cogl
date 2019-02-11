@@ -55,10 +55,11 @@ typedef struct _CoglOnscreenTemplate	      CoglOnscreenTemplate;
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_onscreen_template_get_gtype (void);
 #endif
 
-CoglOnscreenTemplate *
+COGL_API CoglOnscreenTemplate *
 cogl_onscreen_template_new (CoglSwapChain *swap_chain);
 
 /**
@@ -84,7 +85,7 @@ cogl_onscreen_template_new (CoglSwapChain *swap_chain);
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_onscreen_template_set_samples_per_pixel (
                                           CoglOnscreenTemplate *onscreen_template,
                                           int n);
@@ -101,7 +102,7 @@ cogl_onscreen_template_set_samples_per_pixel (
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_onscreen_template_set_swap_throttled (
                                           CoglOnscreenTemplate *onscreen_template,
                                           CoglBool throttled);
@@ -120,7 +121,7 @@ cogl_onscreen_template_set_swap_throttled (
  * Since: 1.20
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_onscreen_template_set_stereo_enabled (
 					   CoglOnscreenTemplate *onscreen_template,
 					   CoglBool enabled);
@@ -135,7 +136,7 @@ cogl_onscreen_template_set_stereo_enabled (
  * Since: 1.10
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_is_onscreen_template (void *object);
 
 COGL_END_DECLS

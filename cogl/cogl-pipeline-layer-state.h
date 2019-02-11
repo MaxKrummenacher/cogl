@@ -150,7 +150,7 @@ typedef enum {
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_texture (CoglPipeline *pipeline,
                                  int           layer_index,
                                  CoglTexture  *texture);
@@ -176,7 +176,7 @@ cogl_pipeline_set_layer_texture (CoglPipeline *pipeline,
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_null_texture (CoglPipeline *pipeline,
                                       int layer_index,
                                       CoglTextureType texture_type);
@@ -191,7 +191,7 @@ cogl_pipeline_set_layer_null_texture (CoglPipeline *pipeline,
  * Stability: unstable
  * Since: 1.10
  */
-CoglTexture *
+COGL_API CoglTexture *
 cogl_pipeline_get_layer_texture (CoglPipeline *pipeline,
                                  int layer_index);
 
@@ -204,7 +204,7 @@ cogl_pipeline_get_layer_texture (CoglPipeline *pipeline,
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_remove_layer (CoglPipeline *pipeline,
 			    int           layer_index);
 
@@ -302,7 +302,7 @@ cogl_pipeline_remove_layer (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_pipeline_set_layer_combine (CoglPipeline *pipeline,
 				 int           layer_index,
 				 const char   *blend_string,
@@ -321,7 +321,7 @@ cogl_pipeline_set_layer_combine (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_combine_constant (CoglPipeline    *pipeline,
                                           int              layer_index,
                                           const CoglColor *constant);
@@ -338,7 +338,7 @@ cogl_pipeline_set_layer_combine_constant (CoglPipeline    *pipeline,
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_matrix (CoglPipeline     *pipeline,
 				int               layer_index,
 				const CoglMatrix *matrix);
@@ -354,7 +354,7 @@ cogl_pipeline_set_layer_matrix (CoglPipeline     *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-int
+COGL_API int
 cogl_pipeline_get_n_layers (CoglPipeline *pipeline);
 
 /**
@@ -375,7 +375,7 @@ cogl_pipeline_get_n_layers (CoglPipeline *pipeline);
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_filters (CoglPipeline      *pipeline,
                                  int                layer_index,
                                  CoglPipelineFilter min_filter,
@@ -398,7 +398,7 @@ cogl_pipeline_set_layer_filters (CoglPipeline      *pipeline,
  * Since: 1.10
  * Stability: unstable
  */
-CoglPipelineFilter
+COGL_API CoglPipelineFilter
 cogl_pipeline_get_layer_min_filter (CoglPipeline *pipeline,
                                     int layer_index);
 
@@ -419,7 +419,7 @@ cogl_pipeline_get_layer_min_filter (CoglPipeline *pipeline,
  * Since: 1.10
  * Stability: unstable
  */
-CoglPipelineFilter
+COGL_API CoglPipelineFilter
 cogl_pipeline_get_layer_mag_filter (CoglPipeline *pipeline,
                                     int layer_index);
 
@@ -445,7 +445,7 @@ cogl_pipeline_get_layer_mag_filter (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_pipeline_set_layer_point_sprite_coords_enabled (CoglPipeline *pipeline,
                                                      int           layer_index,
                                                      CoglBool      enable,
@@ -465,7 +465,7 @@ cogl_pipeline_set_layer_point_sprite_coords_enabled (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_pipeline_get_layer_point_sprite_coords_enabled (CoglPipeline *pipeline,
                                                      int           layer_index);
 
@@ -483,7 +483,7 @@ cogl_pipeline_get_layer_point_sprite_coords_enabled (CoglPipeline *pipeline,
  * Since: 1.6
  * Stability: unstable
  */
-CoglPipelineWrapMode
+COGL_API CoglPipelineWrapMode
 cogl_pipeline_get_layer_wrap_mode_s (CoglPipeline *pipeline,
                                      int           layer_index);
 
@@ -498,7 +498,7 @@ cogl_pipeline_get_layer_wrap_mode_s (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_wrap_mode_s (CoglPipeline        *pipeline,
                                      int                  layer_index,
                                      CoglPipelineWrapMode mode);
@@ -517,7 +517,7 @@ cogl_pipeline_set_layer_wrap_mode_s (CoglPipeline        *pipeline,
  * Since: 1.6
  * Stability: unstable
  */
-CoglPipelineWrapMode
+COGL_API CoglPipelineWrapMode
 cogl_pipeline_get_layer_wrap_mode_t (CoglPipeline *pipeline,
                                      int           layer_index);
 
@@ -533,7 +533,7 @@ cogl_pipeline_get_layer_wrap_mode_t (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_wrap_mode_t (CoglPipeline        *pipeline,
                                      int                  layer_index,
                                      CoglPipelineWrapMode mode);
@@ -552,7 +552,7 @@ cogl_pipeline_set_layer_wrap_mode_t (CoglPipeline        *pipeline,
  * Since: 1.6
  * Stability: unstable
  */
-CoglPipelineWrapMode
+COGL_API CoglPipelineWrapMode
 cogl_pipeline_get_layer_wrap_mode_p (CoglPipeline *pipeline,
                                      int           layer_index);
 
@@ -568,7 +568,7 @@ cogl_pipeline_get_layer_wrap_mode_p (CoglPipeline *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_wrap_mode_p (CoglPipeline        *pipeline,
                                      int                  layer_index,
                                      CoglPipelineWrapMode mode);
@@ -588,7 +588,7 @@ cogl_pipeline_set_layer_wrap_mode_p (CoglPipeline        *pipeline,
  * Since: 2.0
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_pipeline_set_layer_wrap_mode (CoglPipeline        *pipeline,
                                    int                  layer_index,
                                    CoglPipelineWrapMode mode);
@@ -608,7 +608,7 @@ cogl_pipeline_set_layer_wrap_mode (CoglPipeline        *pipeline,
  * Since: 1.10
  * Stability: Unstable
  */
-void
+COGL_API void
 cogl_pipeline_add_layer_snippet (CoglPipeline *pipeline,
                                  int layer,
                                  CoglSnippet *snippet);

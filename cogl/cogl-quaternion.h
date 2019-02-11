@@ -153,6 +153,7 @@ COGL_STRUCT_SIZE_ASSERT (CoglQuaternion, 32);
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_quaternion_get_gtype (void);
 #endif
 
@@ -176,7 +177,7 @@ GType cogl_quaternion_get_gtype (void);
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init (CoglQuaternion *quaternion,
                       float angle,
                       float x,
@@ -198,7 +199,7 @@ cogl_quaternion_init (CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init_from_angle_vector (CoglQuaternion *quaternion,
                                         float angle,
                                         const float *axis3f);
@@ -216,7 +217,7 @@ cogl_quaternion_init_from_angle_vector (CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init_identity (CoglQuaternion *quaternion);
 
 /**
@@ -229,7 +230,7 @@ cogl_quaternion_init_identity (CoglQuaternion *quaternion);
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init_from_array (CoglQuaternion *quaternion,
                                  const float *array);
 
@@ -242,7 +243,7 @@ cogl_quaternion_init_from_array (CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init_from_x_rotation (CoglQuaternion *quaternion,
                                       float angle);
 
@@ -254,7 +255,7 @@ cogl_quaternion_init_from_x_rotation (CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init_from_y_rotation (CoglQuaternion *quaternion,
                                       float angle);
 
@@ -266,7 +267,7 @@ cogl_quaternion_init_from_y_rotation (CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init_from_z_rotation (CoglQuaternion *quaternion,
                                       float angle);
 
@@ -277,7 +278,7 @@ cogl_quaternion_init_from_z_rotation (CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init_from_euler (CoglQuaternion *quaternion,
                                  const CoglEuler *euler);
 
@@ -288,7 +289,7 @@ cogl_quaternion_init_from_euler (CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_init_from_quaternion (CoglQuaternion *quaternion,
                                       CoglQuaternion *src);
 
@@ -302,7 +303,7 @@ cogl_quaternion_init_from_quaternion (CoglQuaternion *quaternion,
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_quaternion_init_from_matrix (CoglQuaternion *quaternion,
                                   const CoglMatrix *matrix);
 
@@ -322,7 +323,7 @@ cogl_quaternion_init_from_matrix (CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-CoglBool
+COGL_API CoglBool
 cogl_quaternion_equal (const void *v1, const void *v2);
 
 /**
@@ -337,7 +338,7 @@ cogl_quaternion_equal (const void *v1, const void *v2);
  *
  * Since: 2.0
  */
-CoglQuaternion *
+COGL_API CoglQuaternion *
 cogl_quaternion_copy (const CoglQuaternion *src);
 
 /**
@@ -349,7 +350,7 @@ cogl_quaternion_copy (const CoglQuaternion *src);
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_free (CoglQuaternion *quaternion);
 
 /**
@@ -359,7 +360,7 @@ cogl_quaternion_free (CoglQuaternion *quaternion);
  *
  * Since: 2.0
  */
-float
+COGL_API float
 cogl_quaternion_get_rotation_angle (const CoglQuaternion *quaternion);
 
 /**
@@ -369,7 +370,7 @@ cogl_quaternion_get_rotation_angle (const CoglQuaternion *quaternion);
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_get_rotation_axis (const CoglQuaternion *quaternion,
                                    float *vector3);
 
@@ -380,7 +381,7 @@ cogl_quaternion_get_rotation_axis (const CoglQuaternion *quaternion,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_normalize (CoglQuaternion *quaternion);
 
 /**
@@ -390,7 +391,7 @@ cogl_quaternion_normalize (CoglQuaternion *quaternion);
  *
  * Since: 2.0
  */
-float
+COGL_API float
 cogl_quaternion_dot_product (const CoglQuaternion *a,
                              const CoglQuaternion *b);
 
@@ -401,7 +402,7 @@ cogl_quaternion_dot_product (const CoglQuaternion *a,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_invert (CoglQuaternion *quaternion);
 
 /**
@@ -421,7 +422,7 @@ cogl_quaternion_invert (CoglQuaternion *quaternion);
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_multiply (CoglQuaternion *result,
                           const CoglQuaternion *left,
                           const CoglQuaternion *right);
@@ -434,7 +435,7 @@ cogl_quaternion_multiply (CoglQuaternion *result,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_pow (CoglQuaternion *quaternion, float exponent);
 
 /**
@@ -463,7 +464,7 @@ cogl_quaternion_pow (CoglQuaternion *quaternion, float exponent);
  * </listitem>
  * </itemizedlist>
  */
-void
+COGL_API void
 cogl_quaternion_slerp (CoglQuaternion *result,
                        const CoglQuaternion *a,
                        const CoglQuaternion *b,
@@ -504,7 +505,7 @@ cogl_quaternion_slerp (CoglQuaternion *result,
  * </listitem>
  * </itemizedlist>
  */
-void
+COGL_API void
 cogl_quaternion_nlerp (CoglQuaternion *result,
                        const CoglQuaternion *a,
                        const CoglQuaternion *b,
@@ -522,7 +523,7 @@ cogl_quaternion_nlerp (CoglQuaternion *result,
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_quaternion_squad (CoglQuaternion *result,
                        const CoglQuaternion *prev,
                        const CoglQuaternion *a,
@@ -543,7 +544,7 @@ cogl_quaternion_squad (CoglQuaternion *result,
  *
  * Since: 2.0
  */
-const CoglQuaternion *
+COGL_API const CoglQuaternion *
 cogl_get_static_identity_quaternion (void);
 
 /**
@@ -555,7 +556,7 @@ cogl_get_static_identity_quaternion (void);
  *
  * Since: 2.0
  */
-const CoglQuaternion *
+COGL_API const CoglQuaternion *
 cogl_get_static_zero_quaternion (void);
 
 COGL_END_DECLS

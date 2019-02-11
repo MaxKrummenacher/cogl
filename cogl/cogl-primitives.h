@@ -33,6 +33,8 @@
 
 #include <glib.h>
 
+#include <cogl/cogl-defines.h>
+
 COGL_BEGIN_DECLS
 
 /**
@@ -53,7 +55,7 @@ COGL_BEGIN_DECLS
  *
  * Fills a rectangle at the given coordinates with the current source material
  **/
-void
+COGL_API void
 cogl_rectangle (float x_1,
                 float y_1,
                 float x_2,
@@ -76,7 +78,7 @@ cogl_rectangle (float x_1,
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_rectangle_with_texture_coords (float  x1,
                                     float  y1,
                                     float  x2,
@@ -113,7 +115,7 @@ cogl_rectangle_with_texture_coords (float  x1,
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_rectangle_with_multitexture_coords (float        x1,
                                          float        y1,
                                          float        x2,
@@ -138,7 +140,7 @@ cogl_rectangle_with_multitexture_coords (float        x1,
  *
  * Since: 0.8.6
  */
-void
+COGL_API void
 cogl_rectangles_with_texture_coords (const float *verts,
                                      unsigned int n_rects);
 
@@ -159,7 +161,7 @@ cogl_rectangles_with_texture_coords (const float *verts,
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_rectangles (const float *verts,
                  unsigned int n_rects);
 
@@ -187,7 +189,7 @@ cogl_rectangles (const float *verts,
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_polygon (const CoglTextureVertex  *vertices,
               unsigned int              n_vertices,
               CoglBool                  use_color);

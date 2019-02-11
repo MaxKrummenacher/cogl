@@ -73,7 +73,7 @@ COGL_BEGIN_DECLS
  * Since: 1.18
  * Stability: unstable
  */
-GLXContext
+COGL_API GLXContext
 cogl_glx_context_get_glx_context (CoglContext *context);
 
 COGL_END_DECLS

@@ -66,7 +66,7 @@ COGL_BEGIN_DECLS
  * Since: 1.10
  * Stability: unstable
  */
-void
+COGL_API void
 cogl_wayland_display_set_compositor_display (CoglDisplay *display,
                                           struct wl_display *wayland_display);
 
@@ -96,7 +96,7 @@ cogl_wayland_display_set_compositor_display (CoglDisplay *display,
  * Since: 1.10
  * Stability: unstable
  */
-CoglTexture2D *
+COGL_API CoglTexture2D *
 cogl_wayland_texture_2d_new_from_buffer (CoglContext *ctx,
                                          struct wl_resource *buffer,
                                          CoglError **error);
@@ -132,7 +132,7 @@ cogl_wayland_texture_2d_new_from_buffer (CoglContext *ctx,
  * Since: 1.18
  * Stability: unstable
  */
-CoglBool
+COGL_API CoglBool
 cogl_wayland_texture_set_region_from_shm_buffer (CoglTexture *texture,
                                                  int src_x,
                                                  int src_y,

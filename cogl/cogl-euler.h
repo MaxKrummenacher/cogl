@@ -172,6 +172,7 @@ COGL_STRUCT_SIZE_ASSERT (CoglEuler, 32);
  *
  * Returns: a #GType that can be used with the GLib type system.
  */
+COGL_API
 GType cogl_euler_get_gtype (void);
 #endif
 
@@ -188,7 +189,7 @@ GType cogl_euler_get_gtype (void);
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_euler_init (CoglEuler *euler,
                  float heading,
                  float pitch,
@@ -203,7 +204,7 @@ cogl_euler_init (CoglEuler *euler,
  * Extracts a euler rotation from the given @matrix and
  * initializses @euler with the component x, y and z rotation angles.
  */
-void
+COGL_API void
 cogl_euler_init_from_matrix (CoglEuler *euler,
                              const CoglMatrix *matrix);
 
@@ -215,7 +216,7 @@ cogl_euler_init_from_matrix (CoglEuler *euler,
  * Initializes a @euler rotation with the equivalent rotation
  * represented by the given @quaternion.
  */
-void
+COGL_API void
 cogl_euler_init_from_quaternion (CoglEuler *euler,
                                  const CoglQuaternion *quaternion);
 
@@ -234,7 +235,7 @@ cogl_euler_init_from_quaternion (CoglEuler *euler,
  * Returns: %TRUE if @v1 and @v2 are equal else %FALSE.
  * Since: 2.0
  */
-CoglBool
+COGL_API CoglBool
 cogl_euler_equal (const void *v1, const void *v2);
 
 /**
@@ -248,7 +249,7 @@ cogl_euler_equal (const void *v1, const void *v2);
  * Returns: A newly allocated #CoglEuler
  * Since: 2.0
  */
-CoglEuler *
+COGL_API CoglEuler *
 cogl_euler_copy (const CoglEuler *src);
 
 /**
@@ -260,7 +261,7 @@ cogl_euler_copy (const CoglEuler *src);
  *
  * Since: 2.0
  */
-void
+COGL_API void
 cogl_euler_free (CoglEuler *euler);
 
 COGL_END_DECLS
