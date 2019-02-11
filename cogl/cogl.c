@@ -758,8 +758,17 @@ _cogl_init (void)
   if (initialized == FALSE)
     {
 #ifdef ENABLE_NLS
-      bindtextdomain (GETTEXT_PACKAGE, COGL_LOCALEDIR);
+      char *localedir = NULL;
+#ifdef _WIN32
+      char *basedir = g_win32_get_package_installation_directory_of_module (NULL);
+      localedir = g_build_filename (basedir, "share", "locale", NULL);
+      g_free (basedir);
+#else
+      localedir = g_strdup (COGL_LOCALEDIR);
+#endif
+      bindtextdomain (GETTEXT_PACKAGE, localedir);
       bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+      g_free (localedir);
 #endif
 
 #if defined(COGL_HAS_GTYPE_SUPPORT) && !GLIB_CHECK_VERSION (2, 36, 0)
