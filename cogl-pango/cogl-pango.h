@@ -74,7 +74,7 @@ typedef PangoCairoFontMap CoglPangoFontMap;
  *
  * Since: 1.14
  */
-PangoFontMap *
+COGL_API PangoFontMap *
 cogl_pango_font_map_new (void);
 
 /**
@@ -85,7 +85,7 @@ cogl_pango_font_map_new (void);
  *
  * Returns: (transfer full): the newly created context: free with g_object_unref().
  */
-PangoContext *
+COGL_API PangoContext *
 cogl_pango_font_map_create_context (CoglPangoFontMap *font_map);
 
 /**
@@ -101,7 +101,7 @@ cogl_pango_font_map_create_context (CoglPangoFontMap *font_map);
  *
  * Since: 1.14
  */
-void
+COGL_API void
 cogl_pango_font_map_set_resolution (CoglPangoFontMap *font_map,
                                     double dpi);
 
@@ -113,7 +113,7 @@ cogl_pango_font_map_set_resolution (CoglPangoFontMap *font_map,
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_pango_font_map_clear_glyph_cache (CoglPangoFontMap *font_map);
 
 /**
@@ -128,7 +128,7 @@ cogl_pango_font_map_clear_glyph_cache (CoglPangoFontMap *font_map);
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_pango_ensure_glyph_cache_for_layout (PangoLayout *layout);
 
 /**
@@ -141,7 +141,7 @@ cogl_pango_ensure_glyph_cache_for_layout (PangoLayout *layout);
  *
  * Since: 1.0
  */
-void
+COGL_API void
 cogl_pango_font_map_set_use_mipmapping (CoglPangoFontMap *font_map,
                                         CoglBool value);
 
@@ -156,7 +156,7 @@ cogl_pango_font_map_set_use_mipmapping (CoglPangoFontMap *font_map,
  *
  * Since: 1.0
  */
-CoglBool
+COGL_API CoglBool
 cogl_pango_font_map_get_use_mipmapping (CoglPangoFontMap *font_map);
 
 /**
@@ -169,7 +169,7 @@ cogl_pango_font_map_get_use_mipmapping (CoglPangoFontMap *font_map);
  *
  * Since: 1.0
  */
-PangoRenderer *
+COGL_API PangoRenderer *
 cogl_pango_font_map_get_renderer (CoglPangoFontMap *font_map);
 
 /**
@@ -186,7 +186,7 @@ cogl_pango_font_map_get_renderer (CoglPangoFontMap *font_map);
  *
  * Since: 1.14
  */
-void
+COGL_API void
 cogl_pango_show_layout (CoglFramebuffer *framebuffer,
                         PangoLayout *layout,
                         float x,
@@ -207,7 +207,7 @@ cogl_pango_show_layout (CoglFramebuffer *framebuffer,
  *
  * Since: 1.14
  */
-void
+COGL_API void
 cogl_pango_show_layout_line (CoglFramebuffer *framebuffer,
                              PangoLayoutLine *line,
                              float x,
@@ -226,6 +226,7 @@ cogl_pango_show_layout_line (CoglFramebuffer *framebuffer,
 typedef struct _CoglPangoRenderer      CoglPangoRenderer;
 typedef struct _CoglPangoRendererClass CoglPangoRendererClass;
 
+COGL_API
 GType cogl_pango_renderer_get_type (void) G_GNUC_CONST;
 
 /**
