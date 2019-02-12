@@ -276,6 +276,7 @@ main (int argc, char **argv)
   while (1)
     {
       CoglPollFD *poll_fds;
+      GPollFD gpoll_fds;
       int n_poll_fds;
       int64_t timeout;
 
@@ -288,8 +289,17 @@ main (int argc, char **argv)
       cogl_poll_renderer_get_info (cogl_context_get_renderer (ctx),
                                    &poll_fds, &n_poll_fds, &timeout);
 
-      g_poll ((GPollFD *) poll_fds, n_poll_fds,
+#if !defined G_OS_WIN32 || (GLIB_SIZEOF_VOID_P == 4)
+      gpoll_fds.fd = (int) poll_fds->fd;
+#else
+      gpoll_fds.fd = (int64_t) poll_fds->fd;
+#endif
+      gpoll_fds.events = poll_fds->events;
+      gpoll_fds.revents = poll_fds->revents;
+
+      g_poll (&gpoll_fds, n_poll_fds,
               timeout == -1 ? -1 : timeout / 1000);
+
 
       cogl_poll_renderer_dispatch (cogl_context_get_renderer (ctx),
                                    poll_fds, n_poll_fds);
